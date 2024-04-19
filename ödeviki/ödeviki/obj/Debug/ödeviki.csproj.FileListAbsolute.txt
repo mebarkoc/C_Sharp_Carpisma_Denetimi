@@ -1,0 +1,10 @@
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\bin\Debug\ödeviki.exe.config
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\bin\Debug\ödeviki.exe
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\bin\Debug\ödeviki.pdb
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.csproj.AssemblyReference.cache
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.Form1.resources
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.Properties.Resources.resources
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.csproj.GenerateResource.cache
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.csproj.CoreCompileInputs.cache
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.exe
+C:\Users\Muhammed Emin BARKOÇ\Desktop\NESNEYE DAYALI PROG\2.Ödev\C_Sharp_Carpisma_Denetimi\ödeviki\ödeviki\obj\Debug\ödeviki.pdb
