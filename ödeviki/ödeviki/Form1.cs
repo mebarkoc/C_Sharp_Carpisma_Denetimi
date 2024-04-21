@@ -1,4 +1,16 @@
-﻿using System;
+﻿/****************************************************************************
+**					           SAKARYA ÜNİVERSİTESİ
+**			         BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ
+**				           BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ
+**				          NESNEYE DAYALI PROGRAMLAMA ÖDEVİ
+**	
+**				ÖDEV NUMARASI…............:
+**				ÖĞRENCİ ADI...............: Muhammed Emin BARKOÇ
+**				ÖĞRENCİ NUMARASI..........: G
+**				DERS GRUBU…………............:
+****************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +32,7 @@ namespace ödeviki
         {
             carpDenetComboBoxIndex = carpDenetCombobox.SelectedIndex;
 
-            void noktaAktif()
+            void noktaBirdeAktif()
             {
                 secilenBirDegisen.Text = "Nokta";
                 yaricapBirDegisen.Enabled = false;
@@ -34,7 +46,7 @@ namespace ödeviki
                 zBirDegisen.Enabled = true;
             }
 
-            void dörtgenAktif()
+            void dörtgenBirdeAktif()
             {
                 secilenIkiDegisen.Text = "Dörtgen";
                 yaricapIkiDegisen.Enabled = false;
@@ -48,113 +60,234 @@ namespace ödeviki
                 zIkiDegisen.Enabled = true;
             }
 
+            void cemberBirdeAktif()
+            {
+                secilenBirDegisen.Text = "Çember";
+                yaricapBirDegisen.Enabled = true;
+                yukseklikBirDegisen.Enabled = false;
+                kenarlarBirBirDegisen.Enabled = false;
+                kenarlarBirIkiDegisen.Enabled = false;
+                kenarlarBirUcDegisen.Enabled = false;
+                kenarlarBirDortDegisen.Enabled = false;
+                xBirDegisen.Enabled = true;
+                yBirDegisen.Enabled = true;
+                zBirDegisen.Enabled = true;
+            }
+
+            void cemberIkideAktif()
+            {
+                secilenIkiDegisen.Text = "Çember";
+                yaricapIkiDegisen.Enabled = true;
+                yukseklikIkiDegisen.Enabled = false;
+                kenarlarIkiBirDegisen.Enabled = false;
+                kenarlarIkiIkiDegisen.Enabled = false;
+                kenarlarIkiUcDegisen.Enabled = false;
+                kenarlarIkiDortDegisen.Enabled = false;
+                xIkiDegisen.Enabled = true;
+                yIkiDegisen.Enabled = true;
+                zIkiDegisen.Enabled = true;
+            }
+
+            void dikdortgenPrizmaBirdeAktif()
+            {
+                secilenBirDegisen.Text = "Dikdörtgen Prizma";
+                yaricapBirDegisen.Enabled = false;
+                yukseklikBirDegisen.Enabled = true;
+                kenarlarBirBirDegisen.Enabled = true;
+                kenarlarBirIkiDegisen.Enabled = true;
+                kenarlarBirUcDegisen.Enabled = false;
+                kenarlarBirDortDegisen.Enabled = false;
+                xBirDegisen.Enabled = true;
+                yBirDegisen.Enabled = true;
+                zBirDegisen.Enabled = true;
+            }
+
+            void dikdortgenPrizmaIkideAktif()
+            {
+                secilenIkiDegisen.Text = "Dikdörtgen Prizma";
+                yaricapIkiDegisen.Enabled = false;
+                yukseklikIkiDegisen.Enabled = true;
+                kenarlarIkiBirDegisen.Enabled = true;
+                kenarlarIkiIkiDegisen.Enabled = true;
+                kenarlarIkiUcDegisen.Enabled = false;
+                kenarlarIkiDortDegisen.Enabled = false;
+                xIkiDegisen.Enabled = true;
+                yIkiDegisen.Enabled = true;
+                zIkiDegisen.Enabled = true;
+            }
+
+            void kureBirdeAktif()
+            {
+                secilenBirDegisen.Text = "Küre";
+                yaricapBirDegisen.Enabled = true;
+                yukseklikBirDegisen.Enabled = false;
+                kenarlarBirBirDegisen.Enabled = false;
+                kenarlarBirIkiDegisen.Enabled = false;
+                kenarlarBirUcDegisen.Enabled = false;
+                kenarlarBirDortDegisen.Enabled = false;
+                xBirDegisen.Enabled = true;
+                yBirDegisen.Enabled = true;
+                zBirDegisen.Enabled = true;
+            }
+
+            void kureIkideAktif()
+            {
+                secilenIkiDegisen.Text = "Küre";
+                yaricapIkiDegisen.Enabled = true;
+                yukseklikIkiDegisen.Enabled = false;
+                kenarlarIkiBirDegisen.Enabled = false;
+                kenarlarIkiIkiDegisen.Enabled = false;
+                kenarlarIkiUcDegisen.Enabled = false;
+                kenarlarIkiDortDegisen.Enabled = false;
+                xIkiDegisen.Enabled = true;
+                yIkiDegisen.Enabled = true;
+                zIkiDegisen.Enabled = true;
+
+            }
+
+            void silindirBirdeAktif()
+            {
+                secilenBirDegisen.Text = "Silindir";
+                yaricapBirDegisen.Enabled = true;
+                yukseklikBirDegisen.Enabled = true;
+                kenarlarBirBirDegisen.Enabled = false;
+                kenarlarBirIkiDegisen.Enabled = false;
+                kenarlarBirUcDegisen.Enabled = false;
+                kenarlarBirDortDegisen.Enabled = false;
+                xBirDegisen.Enabled = true;
+                yBirDegisen.Enabled = true;
+                zBirDegisen.Enabled = true;
+            }
+
+            void silindirIkideAktif()
+            {
+                secilenIkiDegisen.Text = "Silindir";
+                yaricapIkiDegisen.Enabled = true;
+                yukseklikIkiDegisen.Enabled = true;
+                kenarlarIkiBirDegisen.Enabled = false;
+                kenarlarIkiIkiDegisen.Enabled = false;
+                kenarlarIkiUcDegisen.Enabled = false;
+                kenarlarIkiDortDegisen.Enabled = false;
+                xIkiDegisen.Enabled = true;
+                yIkiDegisen.Enabled = true;
+                zIkiDegisen.Enabled = true;
+            }
+
 
             switch (carpDenetComboBoxIndex)
             {
                 
 
                 case 0:
-                    
-                    noktaAktif();
+       
+                    noktaBirdeAktif();
 
-                    dörtgenAktif();
+                    dörtgenBirdeAktif();
                     
 
                     break;
 
                 case 1:
-                    secilenBirDegisen.Text = "Nokta";
-                    yaricapBirDegisen.Enabled = false;
-                    yukseklikBirDegisen.Enabled = false;
-                    kenarlarBirBirDegisen.Enabled = false;
-                    kenarlarBirIkiDegisen.Enabled = false;
-                    kenarlarBirUcDegisen.Enabled = false;
-                    kenarlarBirDortDegisen.Enabled = false;
-                    xBirDegisen.Enabled = true;
-                    yBirDegisen.Enabled = true;
-                    zBirDegisen.Enabled = true;
 
-                    secilenIkiDegisen.Text = "Çember";
-                    yaricapIkiDegisen.Enabled = true;
-                    yukseklikBirDegisen.Enabled = false;
-                    kenarlarBirBirDegisen.Enabled = false;
-                    kenarlarBirIkiDegisen.Enabled = false;
-                    kenarlarBirUcDegisen.Enabled = false;
-                    kenarlarBirDortDegisen.Enabled = false;
-                    xBirDegisen.Enabled = true;
-                    yBirDegisen.Enabled = true;
-                    zBirDegisen.Enabled = true;
+                    noktaBirdeAktif();
+
+                    cemberIkideAktif();
 
                     break;
 
                 case 2:
-                    secilenBirDegisen.Text = "Dikdörtgen Prizma";
-                    secilenIkiDegisen.Text = "Dikdörtgen Prizma";
+
+                    dikdortgenPrizmaBirdeAktif();
+
+                    dikdortgenPrizmaIkideAktif();
+
                     break;
 
                 case 3:
-                    secilenBirDegisen.Text = "Dikdörtgen Prizma";
-                    secilenIkiDegisen.Text = "Çember";
+
+                    dikdortgenPrizmaBirdeAktif();
+
+                    cemberIkideAktif();
                     break;
 
                 case 4:
-                    secilenBirDegisen.Text = "Çember";
-                    secilenIkiDegisen.Text = "Çember";
+
+                    cemberBirdeAktif();
+
+                    cemberIkideAktif();
                     break;
 
                 case 5:
-                    secilenBirDegisen.Text = "Nokta";
-                    secilenIkiDegisen.Text = "Küre";
+                    
+                    noktaBirdeAktif();
+
+                    kureIkideAktif();
+
                     break;
 
                 case 6:
-                    secilenBirDegisen.Text = "Nokta";
-                    secilenIkiDegisen.Text = "Dikdörtgen Prizma";
+                    
+                    noktaBirdeAktif();
+
+                    dikdortgenPrizmaIkideAktif();
+                    
                     break;
 
                 case 7:
-                    secilenBirDegisen.Text = "Nokta";
-                    secilenIkiDegisen.Text = "Silindir";
+
+                    noktaBirdeAktif();
+
+                    silindirIkideAktif();
+
                     break;
 
                 case 8:
-                    secilenBirDegisen.Text = "Silindir";
-                    secilenIkiDegisen.Text = "Silindir";
+
+                    silindirBirdeAktif();
+
+                    silindirIkideAktif();
+                    
                     break;
 
                 case 9:
-                    secilenBirDegisen.Text = "Küre";
-                    secilenIkiDegisen.Text = "Küre";
+
+                    kureBirdeAktif();
+
+                    kureIkideAktif();
+
                     break;
 
                 case 10:
-                    secilenBirDegisen.Text = "Küre";
-                    secilenIkiDegisen.Text = "Silindir";
+
+                    kureBirdeAktif();
+
+                    silindirIkideAktif();
+
                     break;
 
                 case 11:
                     secilenBirDegisen.Text = "Yüzey";
-                    secilenIkiDegisen.Text = "Küre";
+                    kureIkideAktif();
                     break;
 
                 case 12:
                     secilenBirDegisen.Text = "Yüzey";
-                    secilenIkiDegisen.Text = "Dikdörtgen Prizması";
+                    dikdortgenPrizmaIkideAktif();
                     break;
 
                 case 13:
                     secilenBirDegisen.Text = "Yüzey";
-                    secilenIkiDegisen.Text = "Silindir";
+                    silindirIkideAktif();
                     break;
 
                 case 14:
-                    secilenBirDegisen.Text = "Yüzey";
-                    secilenIkiDegisen.Text = "Küre";
+                    kureBirdeAktif();
+                    dikdortgenPrizmaIkideAktif();
                     break;
 
                 case 15:
-                    secilenBirDegisen.Text = "Küre";
-                    secilenIkiDegisen.Text = "Dikdörtgen Prizması";
+                    dikdortgenPrizmaBirdeAktif();
+                    dikdortgenPrizmaIkideAktif();
                     break;
 
             }
