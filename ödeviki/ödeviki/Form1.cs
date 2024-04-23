@@ -4,16 +4,17 @@
 **				           BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ
 **				          NESNEYE DAYALI PROGRAMLAMA ÖDEVİ
 **	
-**				ÖDEV NUMARASI…............:
+**				ÖDEV NUMARASI…............: 2023-2024 Bahar Dönemi İkinci Ödev
 **				ÖĞRENCİ ADI...............: Muhammed Emin BARKOÇ
-**				ÖĞRENCİ NUMARASI..........: G
-**				DERS GRUBU…………............:
+**				ÖĞRENCİ NUMARASI..........: G231210452
+**				DERS GRUBU…………............: İkinci Öğretim A Grubu
 ****************************************************************************/
 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
@@ -328,6 +329,30 @@ namespace ödeviki
             xIkiDegisen.Enabled = false;
             yIkiDegisen.Enabled = false;
             zIkiDegisen.Enabled = false;
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            //Graphics g = e.Graphics;    
+
+            //if (carpDenetComboBoxIndex == -1)
+            //{
+
+            //}
+            //else 
+            //{
+            //    Pen kalemBir = new Pen(Color.Red);
+            //    Pen kalemIki = new Pen(Color.Blue);
+
+            //    int sonBirX = (int)(int.Parse(xBirDegisen.Text) + int.Parse(zBirDegisen.Text) / 2);
+            //    int sonBirY = (int)(int.Parse(yBirDegisen.Text) - int.Parse(zBirDegisen.Text) / 2);
+            //    g.DrawEllipse(kalemBir, sonBirX, sonBirY, 1, 1);
+
+            //    int sonIkiX = (int)(int.Parse(xIkiDegisen.Text) + int.Parse(zIkiDegisen.Text) / 2);
+            //    int sonIkiY = (int)(int.Parse(yIkiDegisen.Text) - int.Parse(zIkiDegisen.Text) / 2);
+            //    g.DrawEllipse(kalemIki, sonIkiX, sonIkiY, 1, 1);
+
+            //}
         }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.koordinatlarIkiBaslik = new System.Windows.Forms.Label();
+            this.koordinatlarBirBaslik = new System.Windows.Forms.Label();
             this.kenarlarIkiDortDegisen = new System.Windows.Forms.TextBox();
             this.kenarlarIkiUcDegisen = new System.Windows.Forms.TextBox();
             this.kenarlarIkiIkiDegisen = new System.Windows.Forms.TextBox();
@@ -69,8 +71,6 @@
             this.carpismaDenetimiBaslik = new System.Windows.Forms.Label();
             this.carpDenetCombobox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.koordinatlarBirBaslik = new System.Windows.Forms.Label();
-            this.koordinatlarIkiBaslik = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +127,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bayrağı bayrak yapan üzerindeki kandır. Toprak, uğrunda ölen varsa vatandır.";
+            // 
+            // koordinatlarIkiBaslik
+            // 
+            this.koordinatlarIkiBaslik.AutoSize = true;
+            this.koordinatlarIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.koordinatlarIkiBaslik.Location = new System.Drawing.Point(330, 426);
+            this.koordinatlarIkiBaslik.Name = "koordinatlarIkiBaslik";
+            this.koordinatlarIkiBaslik.Size = new System.Drawing.Size(120, 24);
+            this.koordinatlarIkiBaslik.TabIndex = 50;
+            this.koordinatlarIkiBaslik.Text = "Koordinatlar :";
+            // 
+            // koordinatlarBirBaslik
+            // 
+            this.koordinatlarBirBaslik.AutoSize = true;
+            this.koordinatlarBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.koordinatlarBirBaslik.Location = new System.Drawing.Point(24, 426);
+            this.koordinatlarBirBaslik.Name = "koordinatlarBirBaslik";
+            this.koordinatlarBirBaslik.Size = new System.Drawing.Size(120, 24);
+            this.koordinatlarBirBaslik.TabIndex = 49;
+            this.koordinatlarBirBaslik.Text = "Koordinatlar :";
             // 
             // kenarlarIkiDortDegisen
             // 
@@ -513,26 +533,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(681, 751);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // koordinatlarBirBaslik
-            // 
-            this.koordinatlarBirBaslik.AutoSize = true;
-            this.koordinatlarBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.koordinatlarBirBaslik.Location = new System.Drawing.Point(24, 426);
-            this.koordinatlarBirBaslik.Name = "koordinatlarBirBaslik";
-            this.koordinatlarBirBaslik.Size = new System.Drawing.Size(120, 24);
-            this.koordinatlarBirBaslik.TabIndex = 49;
-            this.koordinatlarBirBaslik.Text = "Koordinatlar :";
-            // 
-            // koordinatlarIkiBaslik
-            // 
-            this.koordinatlarIkiBaslik.AutoSize = true;
-            this.koordinatlarIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.koordinatlarIkiBaslik.Location = new System.Drawing.Point(330, 426);
-            this.koordinatlarIkiBaslik.Name = "koordinatlarIkiBaslik";
-            this.koordinatlarIkiBaslik.Size = new System.Drawing.Size(120, 24);
-            this.koordinatlarIkiBaslik.TabIndex = 50;
-            this.koordinatlarIkiBaslik.Text = "Koordinatlar :";
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // Form1
             // 
