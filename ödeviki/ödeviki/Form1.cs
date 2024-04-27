@@ -18,6 +18,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -303,11 +304,66 @@ namespace ödeviki
    
         private void butonCalistir_Click(object sender, EventArgs e)
         {
+            pictureBox1.Refresh();
+
+            int seciliCarpDenetComboBoxIndex = carpDenetCombobox.SelectedIndex;
+
+            int pictureBoxOrijinX = pictureBox1.Width  / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+
+            int koordinatBirX = pictureBoxOrijinX + Convert.ToInt32(xBirDegisen.Text);
+            int koordinatBirY = pictureBoxOrijinY - Convert.ToInt32(yBirDegisen.Text);
+            int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
+            int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
+
+
+            switch (seciliCarpDenetComboBoxIndex)
+            {
+                case 0:
+                    
+                    // Birinci şekil Nokta
+                    Nokta nokta = new Nokta(Convert.ToInt32(koordinatBirX), Convert.ToInt32(koordinatBirY));
+                    Graphics gNokta = pictureBox1.CreateGraphics();
+                    gNokta.FillEllipse(Brushes.Black, nokta.X - 2, nokta.Y - 2, 5, 5);
+
+
+                    // İkinci şekil Dörtgen
+                    int dortgenMerkeziX = koordinatIkiX - Convert.ToInt32(xIkiDegisen.Text) / 2;
+                    int dortgenMerkeziY = koordinatIkiY - Convert.ToInt32(yIkiDegisen.Text) / 2;
+
+                    
+                    
+
+                    Dortgen dortgen = new Dortgen(dortgenMerkeziX, dortgenMerkeziY, Convert.ToInt32(kenarlarIkiBirDegisen.Text), Convert.ToInt32(kenarlarIkiIkiDegisen.Text));
+
+                    dortgen.SolUstKose.X = dortgenMerkeziX - Convert.ToInt32(kenarlarIkiBirDegisen.Text) / 2;
+                    dortgen.SolUstKose.Y = dortgenMerkeziY - Convert.ToInt32(kenarlarIkiIkiDegisen.Text) / 2;
+
+
+                    Graphics gDortgen = pictureBox1.CreateGraphics();
+                    gDortgen.DrawRectangle(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yuksekik);
+
+
+                    break;
+            }
+
+
+
+
+            
+
+
         }
+
+
+
+
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            butonCalistir.Enabled = false;
+            butonCalistir.Enabled = true;
 
             yaricapBirDegisen.Enabled = false;
             yukseklikBirDegisen.Enabled = false;
@@ -333,26 +389,37 @@ namespace ödeviki
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-            //Graphics g = e.Graphics;    
+            Pen kalem = new Pen(Color.FromArgb(100, Color.Gray)); // Gri renkte, %40 saydamlıkta bir kalem
+            SolidBrush fırca = new SolidBrush(Color.FromArgb(100, Color.Gray)); // Gri renkte, %40 saydamlıkta bir fırça
 
-            //if (carpDenetComboBoxIndex == -1)
-            //{
+            // Picturebox'ın boyutları
+            int pbGenislik = pictureBox1.Width;
+            int pbYukseklik = pictureBox1.Height;
 
-            //}
-            //else 
-            //{
-            //    Pen kalemBir = new Pen(Color.Red);
-            //    Pen kalemIki = new Pen(Color.Blue);
+            // Picturebox'ın merkez koordinatları
+            int pbMerkezX = pbGenislik / 2;
+            int pbMerkezY = pbYukseklik / 2;
 
-            //    int sonBirX = (int)(int.Parse(xBirDegisen.Text) + int.Parse(zBirDegisen.Text) / 2);
-            //    int sonBirY = (int)(int.Parse(yBirDegisen.Text) - int.Parse(zBirDegisen.Text) / 2);
-            //    g.DrawEllipse(kalemBir, sonBirX, sonBirY, 1, 1);
 
-            //    int sonIkiX = (int)(int.Parse(xIkiDegisen.Text) + int.Parse(zIkiDegisen.Text) / 2);
-            //    int sonIkiY = (int)(int.Parse(yIkiDegisen.Text) - int.Parse(zIkiDegisen.Text) / 2);
-            //    g.DrawEllipse(kalemIki, sonIkiX, sonIkiY, 1, 1);
+            // Yatay ekseni çiz
+            e.Graphics.DrawLine(kalem, 0, pbMerkezY, pbGenislik, pbMerkezY);
+            // Dikey ekseni çiz
+            e.Graphics.DrawLine(kalem, pbMerkezX, 0, pbMerkezX, pbYukseklik);
 
-            //}
+            // Yatay eksende kılavuz çizgileri
+            for (int i = 0; i < pbGenislik; i += 10)
+                e.Graphics.DrawLine(kalem, i, pbMerkezY - 2, i, pbMerkezY + 2);
+
+            // Dikey eksende kılavuz çizgileri
+            for (int i = 0; i < pbYukseklik; i += 10)
+                e.Graphics.DrawLine(kalem, pbMerkezX - 2, i, pbMerkezX + 2, i);
+
+            // Orta noktayı gösteren kare çiz
+            e.Graphics.FillRectangle(fırca, pbMerkezX - 2, pbMerkezY - 2, 5, 5);
+
+            // Kullanılan nesneleri temizle
+            kalem.Dispose();
+            fırca.Dispose();
         }
     }
 }
