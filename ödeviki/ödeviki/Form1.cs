@@ -31,7 +31,6 @@ namespace ödeviki
     public partial class Form1 : Form
     {
         public int carpDenetComboBoxIndex;
-        Nokta nokta;
 
         public void carpDenetCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -300,10 +299,9 @@ namespace ödeviki
             Nokta nokta = new Nokta(koordinatBirX, koordinatBirY);
             Graphics gNokta = pictureBox1.CreateGraphics();
             gNokta.FillEllipse(Brushes.Blue, nokta.X - 2, nokta.Y - 2, 5, 5);
-
-            return nokta;
+            return nokta ;
         }
-        public void dortgenIkiyeCiz()
+        public Dortgen dortgenIkiyeCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
@@ -318,6 +316,8 @@ namespace ödeviki
             dortgen.SolUstKose.Y = koordinatIkiY - Convert.ToInt32(yukseklikIkiDegisen.Text) / 2;
             Graphics gDortgen = pictureBox1.CreateGraphics();
             gDortgen.DrawRectangle(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yukseklik);
+
+            return dortgen;
         }
         public void cemberBireCiz()
         {
@@ -482,9 +482,13 @@ namespace ödeviki
            
             switch (seciliCarpDenetComboBoxIndex)
             {
-                case 0: 
+                case 0:
+                    Nokta nokta = new Nokta(noktaBireCiz().X, noktaBireCiz().Y);
+                    Dortgen dortgen = new Dortgen(dortgenIkiyeCiz().SolUstKose.X, dortgenIkiyeCiz().SolUstKose.Y,dortgenIkiyeCiz().Genislik, dortgenIkiyeCiz().Yukseklik);
+
                     noktaBireCiz();
                     dortgenIkiyeCiz();
+                    Carpisma.noktaDortgenCarpismaVarMi(nokta, dortgen);
                     break;
 
                 case 1: 
@@ -551,18 +555,29 @@ namespace ödeviki
                     dıkdortgenIkideCiz();
                     break;
             }
-
-
-
-
-            
-
-
         }
 
         public  class Carpisma
         {
-            
+            public static bool noktaDortgenCarpismaVarMi(Nokta nokta, Dortgen dortgen)
+            {   
+                if (nokta != null && dortgen != null)
+                {
+                    int dortgenMerkezX = dortgen.SolUstKose.X + dortgen.Genislik  / 2;
+                    int dortgenMerkezY = dortgen.SolUstKose.Y + dortgen.Yukseklik / 2;
+                    
+                    if (Math.Abs( dortgenMerkezX - nokta.X) <= dortgen.Genislik /2 && Math.Abs(dortgenMerkezY - nokta.Y) <= dortgen.Yukseklik / 2 )
+                    {
+                        Console.WriteLine("Burdayım be burdayım");
+                    }
+                    else
+                    {
+                        Console.WriteLine("carpışma yok");
+                    }
+                }
+
+                return true;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
