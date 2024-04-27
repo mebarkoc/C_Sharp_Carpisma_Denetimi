@@ -21,6 +21,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,10 +31,24 @@ namespace ödeviki
     public partial class Form1 : Form
     {
         public int carpDenetComboBoxIndex;
+        Nokta nokta;
 
         public void carpDenetCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             carpDenetComboBoxIndex = carpDenetCombobox.SelectedIndex;
+
+            yaricapBirDegisen.Clear();
+            yukseklikBirDegisen.Clear();
+            genislikBirDegisen.Clear();
+            derinlikBirDegisen.Clear();
+            xBirDegisen.Clear();
+            yBirDegisen.Clear();
+            xIkiDegisen.Clear();
+            yIkiDegisen.Clear();
+            yaricapIkiDegisen.Clear();
+            yukseklikIkiDegisen.Clear();
+            genislikIkiDegisen.Clear();
+            derinlikIkiDegisen.Clear();
 
             void noktaBirdeAktif()
             {
@@ -272,12 +287,9 @@ namespace ödeviki
         
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-
-            
-
         }
         
-        public void noktaBireCiz()
+        public Nokta noktaBireCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
@@ -288,6 +300,8 @@ namespace ödeviki
             Nokta nokta = new Nokta(koordinatBirX, koordinatBirY);
             Graphics gNokta = pictureBox1.CreateGraphics();
             gNokta.FillEllipse(Brushes.Blue, nokta.X - 2, nokta.Y - 2, 5, 5);
+
+            return nokta;
         }
         public void dortgenIkiyeCiz()
         {
@@ -381,6 +395,22 @@ namespace ödeviki
             gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
             gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
         }
+        public void kureBireCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatBirX = pictureBoxOrijinX + Convert.ToInt32(xBirDegisen.Text);
+            int koordinatBirY = pictureBoxOrijinY - Convert.ToInt32(yBirDegisen.Text);
+            int kureYaricap = Convert.ToInt32(yaricapBirDegisen.Text);
+
+            Kure kure = new Kure(koordinatBirX, koordinatBirY, kureYaricap);
+            kure.SolUstNokta.X = koordinatBirX - kureYaricap;
+            kure.SolUstNokta.Y = koordinatBirY - kureYaricap;
+            Graphics gKure = pictureBox1.CreateGraphics();
+            gKure.DrawEllipse(Pens.Blue, kure.SolUstNokta.X, kure.SolUstNokta.Y, kureYaricap * 2, kureYaricap * 2);
+            gKure.DrawEllipse(Pens.Blue, kure.SolUstNokta.X + kureYaricap / 2, kure.SolUstNokta.Y, kureYaricap, kureYaricap * 2);
+            gKure.DrawEllipse(Pens.Blue, kure.SolUstNokta.X, kure.SolUstNokta.Y + kureYaricap / 2, kureYaricap * 2, kureYaricap);
+        }
         public void kureIkiyeCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
@@ -388,8 +418,6 @@ namespace ödeviki
             int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
             int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
             int kureYaricap = Convert.ToInt32(yaricapIkiDegisen.Text);
-
-
 
             Kure kure = new Kure(koordinatIkiX, koordinatIkiY, kureYaricap);
             kure.SolUstNokta.X = koordinatIkiX - kureYaricap;
@@ -399,7 +427,52 @@ namespace ödeviki
             gKure.DrawEllipse(Pens.Red, kure.SolUstNokta.X + kureYaricap/2, kure.SolUstNokta.Y, kureYaricap, kureYaricap * 2);
             gKure.DrawEllipse(Pens.Red, kure.SolUstNokta.X, kure.SolUstNokta.Y + kureYaricap/2, kureYaricap * 2, kureYaricap);
         }
+        public void silindirBireCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatBirX = pictureBoxOrijinX + Convert.ToInt32(xBirDegisen.Text);
+            int koordinatBirY = pictureBoxOrijinY - Convert.ToInt32(yBirDegisen.Text);
+            int silindirYaricap = Convert.ToInt32(yaricapBirDegisen.Text);
+            int silindirYukseklik = Convert.ToInt32(yukseklikBirDegisen.Text);
 
+            Cember tabanCember = new Cember(koordinatBirX, koordinatBirY, silindirYaricap * 2);
+
+            Silindir silindir = new Silindir(tabanCember, silindirYukseklik);
+
+            tabanCember.SolUstNokta.X = koordinatBirX - silindirYaricap;
+            tabanCember.SolUstNokta.Y = koordinatBirY - silindirYaricap;
+
+
+            Graphics gSilindir = pictureBox1.CreateGraphics();
+            gSilindir.DrawEllipse(Pens.Blue, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y, silindirYaricap * 2, silindirYaricap * 2);
+            gSilindir.DrawEllipse(Pens.Blue, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y - silindir.Yukseklik, silindirYaricap * 2, silindirYaricap * 2);
+            gSilindir.DrawLine(Pens.Blue, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y + silindirYaricap, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y - silindirYukseklik + silindirYaricap);
+            gSilindir.DrawLine(Pens.Blue, tabanCember.SolUstNokta.X + silindirYaricap * 2, tabanCember.SolUstNokta.Y + silindirYaricap, tabanCember.SolUstNokta.X + silindirYaricap * 2, tabanCember.SolUstNokta.Y + silindirYaricap - silindirYukseklik);
+        }
+        public void silindirIkiyeCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
+            int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
+            int silindirYaricap = Convert.ToInt32(yaricapIkiDegisen.Text);
+            int silindirYukseklik = Convert.ToInt32(yukseklikIkiDegisen.Text);
+
+            Cember tabanCember = new Cember(koordinatIkiX, koordinatIkiY, silindirYaricap * 2);
+
+            Silindir silindir = new Silindir(tabanCember, silindirYukseklik);
+
+            tabanCember.SolUstNokta.X = koordinatIkiX - silindirYaricap;
+            tabanCember.SolUstNokta.Y = koordinatIkiY - silindirYaricap;
+
+
+            Graphics gSilindir = pictureBox1.CreateGraphics();
+            gSilindir.DrawEllipse(Pens.Red, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y, silindirYaricap * 2, silindirYaricap * 2);
+            gSilindir.DrawEllipse(Pens.Red, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y - silindir.Yukseklik, silindirYaricap * 2, silindirYaricap * 2);
+            gSilindir.DrawLine(Pens.Red, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y + silindirYaricap, tabanCember.SolUstNokta.X, tabanCember.SolUstNokta.Y - silindirYukseklik + silindirYaricap);
+            gSilindir.DrawLine(Pens.Red, tabanCember.SolUstNokta.X + silindirYaricap * 2, tabanCember.SolUstNokta.Y + silindirYaricap, tabanCember.SolUstNokta.X + silindirYaricap * 2, tabanCember.SolUstNokta.Y + silindirYaricap - silindirYukseklik);
+        }
 
         private void butonCalistir_Click(object sender, EventArgs e)
         {
@@ -411,7 +484,7 @@ namespace ödeviki
             {
                 case 0: 
                     noktaBireCiz();
-                    dortgenIkiyeCiz();                    
+                    dortgenIkiyeCiz();
                     break;
 
                 case 1: 
@@ -440,7 +513,42 @@ namespace ödeviki
                     break;
 
                 case 6:
-                    
+                    noktaBireCiz();
+                    dıkdortgenIkideCiz();
+                    break;
+
+                case 7:
+                    noktaBireCiz();
+                    silindirIkiyeCiz();
+                    break;
+
+                case 8:
+                    silindirBireCiz();
+                    silindirIkiyeCiz();
+                    break;
+
+                case 9:
+                    kureBireCiz();
+                    kureIkiyeCiz();
+                    break;
+
+                case 10:
+                    kureBireCiz();
+                    silindirIkiyeCiz();
+                    break;
+
+                case 11:
+                    break;
+
+                case 12:
+                    break;
+
+                case 13:
+                    break;
+
+                case 14:
+                    kureBireCiz();
+                    dıkdortgenIkideCiz();
                     break;
             }
 
@@ -450,6 +558,11 @@ namespace ödeviki
             
 
 
+        }
+
+        public  class Carpisma
+        {
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -477,8 +590,6 @@ namespace ödeviki
         {
             // Koordinat düzlemini çizmek için kullanılacak kalemler oluştur
             Pen kalem = new Pen(Color.FromArgb(100, Color.Gray)); // Gri renkte, %40 saydamlıkta bir kalem
-            Pen xKalem = new Pen(Color.Red); // Kırmızı renkte x ekseni için kalem
-            Pen yKalem = new Pen(Color.Green); // Yeşil renkte y ekseni için kalem
 
             // Picturebox'ın boyutları
             int pbGenislik = pictureBox1.Width;
@@ -511,14 +622,10 @@ namespace ödeviki
 
             // Kullanılan kalemleri ve fontu temizle
             kalem.Dispose();
-            xKalem.Dispose();
-            yKalem.Dispose();
             etiketFont.Dispose();
         
         }
-
-    
-
+           
        
     }
 }

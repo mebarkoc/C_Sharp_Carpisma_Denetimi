@@ -454,8 +454,7 @@
             "Yüzey ile Küre Çarpışması Denetimi",
             "Yüzey ile Dikdörtgen Prizma Çarpışması Denetimi",
             "Yüzey ile Silindir Çarpışması Denetimi",
-            "Küre ile Dikdörtgen Prizma Çarpışması Denetimi",
-            "Dikdörtgen Prizma ile Dikdörtgen Prizma Çarpışması "});
+            "Küre ile Dikdörtgen Prizma Çarpışması Denetimi"});
             this.carpDenetCombobox.Location = new System.Drawing.Point(6, 60);
             this.carpDenetCombobox.Name = "carpDenetCombobox";
             this.carpDenetCombobox.Size = new System.Drawing.Size(599, 28);
