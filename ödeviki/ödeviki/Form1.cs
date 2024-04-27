@@ -16,6 +16,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
@@ -39,27 +40,21 @@ namespace ödeviki
                 secilenBirDegisen.Text = "Nokta";
                 yaricapBirDegisen.Enabled = false;
                 yukseklikBirDegisen.Enabled = false;
-                kenarlarBirBirDegisen.Enabled = false;
-                kenarlarBirIkiDegisen.Enabled = false;
-                kenarlarBirUcDegisen.Enabled = false;
-                kenarlarBirDortDegisen.Enabled = false;
+                genislikBirDegisen.Enabled = false;
+                derinlikBirDegisen.Enabled = false;
                 xBirDegisen.Enabled = true;
                 yBirDegisen.Enabled = true;
-                zBirDegisen.Enabled = true;
             }
 
-            void dörtgenBirdeAktif()
+            void dortgenBirdeAktif()
             {
                 secilenIkiDegisen.Text = "Dörtgen";
                 yaricapIkiDegisen.Enabled = false;
-                yukseklikIkiDegisen.Enabled = false;
-                kenarlarIkiBirDegisen.Enabled = true;
-                kenarlarIkiIkiDegisen.Enabled = true;
-                kenarlarIkiUcDegisen.Enabled = true;
-                kenarlarIkiDortDegisen.Enabled = true;
+                yukseklikIkiDegisen.Enabled = true;
+                genislikIkiDegisen.Enabled = true;
+                derinlikIkiDegisen.Enabled = false;
                 xIkiDegisen.Enabled = true;
                 yIkiDegisen.Enabled = true;
-                zIkiDegisen.Enabled = true;
             }
 
             void cemberBirdeAktif()
@@ -67,13 +62,10 @@ namespace ödeviki
                 secilenBirDegisen.Text = "Çember";
                 yaricapBirDegisen.Enabled = true;
                 yukseklikBirDegisen.Enabled = false;
-                kenarlarBirBirDegisen.Enabled = false;
-                kenarlarBirIkiDegisen.Enabled = false;
-                kenarlarBirUcDegisen.Enabled = false;
-                kenarlarBirDortDegisen.Enabled = false;
+                genislikBirDegisen.Enabled = false;
+                derinlikBirDegisen.Enabled = false;
                 xBirDegisen.Enabled = true;
                 yBirDegisen.Enabled = true;
-                zBirDegisen.Enabled = true;
             }
 
             void cemberIkideAktif()
@@ -81,13 +73,10 @@ namespace ödeviki
                 secilenIkiDegisen.Text = "Çember";
                 yaricapIkiDegisen.Enabled = true;
                 yukseklikIkiDegisen.Enabled = false;
-                kenarlarIkiBirDegisen.Enabled = false;
-                kenarlarIkiIkiDegisen.Enabled = false;
-                kenarlarIkiUcDegisen.Enabled = false;
-                kenarlarIkiDortDegisen.Enabled = false;
+                genislikIkiDegisen.Enabled = false;
+                derinlikIkiDegisen.Enabled = false;
                 xIkiDegisen.Enabled = true;
                 yIkiDegisen.Enabled = true;
-                zIkiDegisen.Enabled = true;
             }
 
             void dikdortgenPrizmaBirdeAktif()
@@ -95,13 +84,10 @@ namespace ödeviki
                 secilenBirDegisen.Text = "Dikdörtgen Prizma";
                 yaricapBirDegisen.Enabled = false;
                 yukseklikBirDegisen.Enabled = true;
-                kenarlarBirBirDegisen.Enabled = true;
-                kenarlarBirIkiDegisen.Enabled = true;
-                kenarlarBirUcDegisen.Enabled = false;
-                kenarlarBirDortDegisen.Enabled = false;
+                genislikBirDegisen.Enabled = true;
+                derinlikBirDegisen.Enabled = true;
                 xBirDegisen.Enabled = true;
                 yBirDegisen.Enabled = true;
-                zBirDegisen.Enabled = true;
             }
 
             void dikdortgenPrizmaIkideAktif()
@@ -109,13 +95,10 @@ namespace ödeviki
                 secilenIkiDegisen.Text = "Dikdörtgen Prizma";
                 yaricapIkiDegisen.Enabled = false;
                 yukseklikIkiDegisen.Enabled = true;
-                kenarlarIkiBirDegisen.Enabled = true;
-                kenarlarIkiIkiDegisen.Enabled = true;
-                kenarlarIkiUcDegisen.Enabled = false;
-                kenarlarIkiDortDegisen.Enabled = false;
+                genislikIkiDegisen.Enabled = true;
+                derinlikIkiDegisen.Enabled = true;
                 xIkiDegisen.Enabled = true;
                 yIkiDegisen.Enabled = true;
-                zIkiDegisen.Enabled = true;
             }
 
             void kureBirdeAktif()
@@ -123,13 +106,10 @@ namespace ödeviki
                 secilenBirDegisen.Text = "Küre";
                 yaricapBirDegisen.Enabled = true;
                 yukseklikBirDegisen.Enabled = false;
-                kenarlarBirBirDegisen.Enabled = false;
-                kenarlarBirIkiDegisen.Enabled = false;
-                kenarlarBirUcDegisen.Enabled = false;
-                kenarlarBirDortDegisen.Enabled = false;
+                genislikBirDegisen.Enabled = false;
+                derinlikBirDegisen.Enabled = false;
                 xBirDegisen.Enabled = true;
                 yBirDegisen.Enabled = true;
-                zBirDegisen.Enabled = true;
             }
 
             void kureIkideAktif()
@@ -137,13 +117,10 @@ namespace ödeviki
                 secilenIkiDegisen.Text = "Küre";
                 yaricapIkiDegisen.Enabled = true;
                 yukseklikIkiDegisen.Enabled = false;
-                kenarlarIkiBirDegisen.Enabled = false;
-                kenarlarIkiIkiDegisen.Enabled = false;
-                kenarlarIkiUcDegisen.Enabled = false;
-                kenarlarIkiDortDegisen.Enabled = false;
+                genislikIkiDegisen.Enabled = false;
+                derinlikIkiDegisen.Enabled = false;
                 xIkiDegisen.Enabled = true;
                 yIkiDegisen.Enabled = true;
-                zIkiDegisen.Enabled = true;
 
             }
 
@@ -152,13 +129,10 @@ namespace ödeviki
                 secilenBirDegisen.Text = "Silindir";
                 yaricapBirDegisen.Enabled = true;
                 yukseklikBirDegisen.Enabled = true;
-                kenarlarBirBirDegisen.Enabled = false;
-                kenarlarBirIkiDegisen.Enabled = false;
-                kenarlarBirUcDegisen.Enabled = false;
-                kenarlarBirDortDegisen.Enabled = false;
+                genislikBirDegisen.Enabled = false;
+                derinlikBirDegisen.Enabled = false;
                 xBirDegisen.Enabled = true;
                 yBirDegisen.Enabled = true;
-                zBirDegisen.Enabled = true;
             }
 
             void silindirIkideAktif()
@@ -166,13 +140,10 @@ namespace ödeviki
                 secilenIkiDegisen.Text = "Silindir";
                 yaricapIkiDegisen.Enabled = true;
                 yukseklikIkiDegisen.Enabled = true;
-                kenarlarIkiBirDegisen.Enabled = false;
-                kenarlarIkiIkiDegisen.Enabled = false;
-                kenarlarIkiUcDegisen.Enabled = false;
-                kenarlarIkiDortDegisen.Enabled = false;
+                genislikIkiDegisen.Enabled = false;
+                derinlikIkiDegisen.Enabled = false;
                 xIkiDegisen.Enabled = true;
                 yIkiDegisen.Enabled = true;
-                zIkiDegisen.Enabled = true;
             }
 
 
@@ -184,7 +155,7 @@ namespace ödeviki
        
                     noktaBirdeAktif();
 
-                    dörtgenBirdeAktif();
+                    dortgenBirdeAktif();
                     
 
                     break;
@@ -295,55 +266,181 @@ namespace ödeviki
             }
         }
 
-
-
         public Form1()
         {   
             InitializeComponent();
+        
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
+            
+
         }
-   
-        private void butonCalistir_Click(object sender, EventArgs e)
+        
+        public void noktaBireCiz()
         {
-            pictureBox1.Refresh();
-
-            int seciliCarpDenetComboBoxIndex = carpDenetCombobox.SelectedIndex;
-
-            int pictureBoxOrijinX = pictureBox1.Width  / 2;
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
 
             int koordinatBirX = pictureBoxOrijinX + Convert.ToInt32(xBirDegisen.Text);
             int koordinatBirY = pictureBoxOrijinY - Convert.ToInt32(yBirDegisen.Text);
+
+            Nokta nokta = new Nokta(koordinatBirX, koordinatBirY);
+            Graphics gNokta = pictureBox1.CreateGraphics();
+            gNokta.FillEllipse(Brushes.Blue, nokta.X - 2, nokta.Y - 2, 5, 5);
+        }
+        public void dortgenIkiyeCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+
             int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
             int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
 
+            
+            Dortgen dortgen = new Dortgen(koordinatIkiX, koordinatIkiY, Convert.ToInt32(genislikIkiDegisen.Text), Convert.ToInt32(yukseklikIkiDegisen.Text));
+            
+            dortgen.SolUstKose.X = koordinatIkiX - Convert.ToInt32(genislikIkiDegisen.Text) / 2;
+            dortgen.SolUstKose.Y = koordinatIkiY - Convert.ToInt32(yukseklikIkiDegisen.Text) / 2;
+            Graphics gDortgen = pictureBox1.CreateGraphics();
+            gDortgen.DrawRectangle(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yukseklik);
+        }
+        public void cemberBireCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatBirX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
+            int koordinatBirY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
+            int cemberYaricap = Convert.ToInt32(yaricapIkiDegisen.Text);
 
+            Cember cember = new Cember(koordinatBirX, koordinatBirY, cemberYaricap);
+            Graphics gCember = pictureBox1.CreateGraphics();
+            cember.SolUstNokta.X = koordinatBirX - cemberYaricap;
+            cember.SolUstNokta.Y = koordinatBirY - cemberYaricap;
+            gCember.DrawEllipse(Pens.Red, cember.SolUstNokta.X, cember.SolUstNokta.Y, cember.YariCap * 2, cember.YariCap * 2);
+        }
+        public void cemberIkiyeCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
+            int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
+            int cemberYaricap = Convert.ToInt32(yaricapIkiDegisen.Text);
+
+            Cember cember = new Cember(koordinatIkiX,koordinatIkiY,cemberYaricap);
+            Graphics gCember = pictureBox1.CreateGraphics();
+            cember.SolUstNokta.X = koordinatIkiX - cemberYaricap;
+            cember.SolUstNokta.Y = koordinatIkiY - cemberYaricap;
+            gCember.DrawEllipse(Pens.Red, cember.SolUstNokta.X, cember.SolUstNokta.Y, cember.YariCap*2, cember.YariCap*2);
+        }
+        public void dıkdortgenBireCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatBirX = pictureBoxOrijinX + Convert.ToInt32(xBirDegisen.Text);
+            int koordinatBirY = pictureBoxOrijinY - Convert.ToInt32(yBirDegisen.Text);
+
+            Dortgen dortgen = new Dortgen(koordinatBirX, koordinatBirY, Convert.ToInt32(genislikBirDegisen.Text), Convert.ToInt32(yukseklikBirDegisen.Text));
+            DıkdortgenPrizma dıkdortgenPrizma = new DıkdortgenPrizma(dortgen, Convert.ToInt32(yukseklikBirDegisen.Text));
+            dortgen.SolUstKose.X = koordinatBirX - Convert.ToInt32(genislikBirDegisen.Text) / 2;
+            dortgen.SolUstKose.Y = koordinatBirY - Convert.ToInt32(yukseklikBirDegisen.Text) / 2;
+            Graphics gDıkdortgenPrizma = pictureBox1.CreateGraphics();
+            gDıkdortgenPrizma.DrawRectangle(Pens.Blue, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yukseklik);
+
+            double derinlikReferans = Convert.ToInt32(derinlikBirDegisen.Text) / Math.Sqrt(2);
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + dortgen.Genislik, dortgen.SolUstKose.Y, dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X, dortgen.SolUstKose.Y + dortgen.Yukseklik, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans) + dortgen.Yukseklik);
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y -  Convert.ToSingle(derinlikReferans)); 
+        }
+        public void dıkdortgenIkideCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
+            int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
+
+            Dortgen dortgen = new Dortgen(koordinatIkiX, koordinatIkiY, Convert.ToInt32(genislikIkiDegisen.Text), Convert.ToInt32(yukseklikIkiDegisen.Text));
+            DıkdortgenPrizma dıkdortgenPrizma = new DıkdortgenPrizma(dortgen, Convert.ToInt32(yukseklikIkiDegisen.Text));
+            dortgen.SolUstKose.X = koordinatIkiX - Convert.ToInt32(genislikIkiDegisen.Text) / 2;
+            dortgen.SolUstKose.Y = koordinatIkiY - Convert.ToInt32(yukseklikIkiDegisen.Text) / 2;
+            Graphics gDıkdortgenPrizma = pictureBox1.CreateGraphics();
+            gDıkdortgenPrizma.DrawRectangle(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yukseklik);
+
+            double derinlikReferans = Convert.ToInt32(derinlikIkiDegisen.Text) / Math.Sqrt(2);
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + dortgen.Genislik, dortgen.SolUstKose.Y, dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y + dortgen.Yukseklik, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans) + dortgen.Yukseklik);
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
+            gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+        }
+        public void kureIkiyeCiz()
+        {
+            int pictureBoxOrijinX = pictureBox1.Width / 2;
+            int pictureBoxOrijinY = pictureBox1.Height / 2;
+            int koordinatIkiX = pictureBoxOrijinX + Convert.ToInt32(xIkiDegisen.Text);
+            int koordinatIkiY = pictureBoxOrijinY - Convert.ToInt32(yIkiDegisen.Text);
+            int kureYaricap = Convert.ToInt32(yaricapIkiDegisen.Text);
+
+
+
+            Kure kure = new Kure(koordinatIkiX, koordinatIkiY, kureYaricap);
+            kure.SolUstNokta.X = koordinatIkiX - kureYaricap;
+            kure.SolUstNokta.Y = koordinatIkiY - kureYaricap;
+            Graphics gKure = pictureBox1.CreateGraphics();
+            gKure.DrawEllipse(Pens.Red, kure.SolUstNokta.X, kure.SolUstNokta.Y, kureYaricap * 2, kureYaricap * 2);
+            gKure.DrawEllipse(Pens.Red, kure.SolUstNokta.X + kureYaricap/2, kure.SolUstNokta.Y, kureYaricap, kureYaricap * 2);
+            gKure.DrawEllipse(Pens.Red, kure.SolUstNokta.X, kure.SolUstNokta.Y + kureYaricap/2, kureYaricap * 2, kureYaricap);
+        }
+
+
+        private void butonCalistir_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Refresh();
+            
+            int seciliCarpDenetComboBoxIndex = carpDenetCombobox.SelectedIndex;
+           
             switch (seciliCarpDenetComboBoxIndex)
             {
-                case 0:
+                case 0: 
+                    noktaBireCiz();
+                    dortgenIkiyeCiz();                    
+                    break;
+
+                case 1: 
+                    noktaBireCiz();
+                    cemberIkiyeCiz();
+                    break;
+
+                case 2:
+                    dıkdortgenBireCiz();
+                    dıkdortgenIkideCiz();
+                    break;
+
+                case 3:
+                    dıkdortgenBireCiz();
+                    cemberIkiyeCiz();
+                    break;
+
+                case 4:
+                    cemberBireCiz();
+                    cemberIkiyeCiz();
+                    break;
+
+                case 5:
+                    noktaBireCiz();
+                    kureIkiyeCiz();
+                    break;
+
+                case 6:
                     
-                    // Birinci şekil Nokta
-                    Nokta nokta = new Nokta(Convert.ToInt32(koordinatBirX), Convert.ToInt32(koordinatBirY));
-                    Graphics gNokta = pictureBox1.CreateGraphics();
-                    gNokta.FillEllipse(Brushes.Black, nokta.X - 2, nokta.Y - 2, 5, 5);
-
-
-                    // İkinci şekil Dörtgen
-                    int dortgenMerkeziX = koordinatIkiX - Convert.ToInt32(xIkiDegisen.Text) / 2;
-                    int dortgenMerkeziY = koordinatIkiY - Convert.ToInt32(yIkiDegisen.Text) / 2;
-
-                    
-                    
-
-                    Dortgen dortgen = new Dortgen(dortgenMerkeziX, dortgenMerkeziY, Convert.ToInt32(kenarlarIkiBirDegisen.Text), Convert.ToInt32(kenarlarIkiIkiDegisen.Text));
-
-                    dortgen.SolUstKose.X = dortgenMerkeziX - Convert.ToInt32(kenarlarIkiBirDegisen.Text) / 2;
-                    dortgen.SolUstKose.Y = dortgenMerkeziY - Convert.ToInt32(kenarlarIkiIkiDegisen.Text) / 2;
-
-
-                    Graphics gDortgen = pictureBox1.CreateGraphics();
-                    gDortgen.DrawRectangle(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yuksekik);
-
-
                     break;
             }
 
@@ -355,71 +452,73 @@ namespace ödeviki
 
         }
 
-
-
-
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
+
             butonCalistir.Enabled = true;
 
             yaricapBirDegisen.Enabled = false;
             yukseklikBirDegisen.Enabled = false;
-            kenarlarBirBirDegisen.Enabled = false;
-            kenarlarBirIkiDegisen.Enabled = false;
-            kenarlarBirUcDegisen.Enabled = false;
-            kenarlarBirDortDegisen.Enabled = false;
+            genislikBirDegisen.Enabled = false;
+            derinlikBirDegisen.Enabled = false;
             xBirDegisen.Enabled = false;
             yBirDegisen.Enabled = false;
-            zBirDegisen.Enabled = false;
 
 
             yaricapIkiDegisen.Enabled = false;
             yukseklikIkiDegisen.Enabled = false;
-            kenarlarIkiBirDegisen.Enabled = false;
-            kenarlarIkiIkiDegisen.Enabled = false;
-            kenarlarIkiUcDegisen.Enabled = false;
-            kenarlarIkiDortDegisen.Enabled = false;
+            genislikIkiDegisen.Enabled = false;
+            derinlikIkiDegisen.Enabled = false;
             xIkiDegisen.Enabled = false;
             yIkiDegisen.Enabled = false;
-            zIkiDegisen.Enabled = false;
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
+            // Koordinat düzlemini çizmek için kullanılacak kalemler oluştur
             Pen kalem = new Pen(Color.FromArgb(100, Color.Gray)); // Gri renkte, %40 saydamlıkta bir kalem
-            SolidBrush fırca = new SolidBrush(Color.FromArgb(100, Color.Gray)); // Gri renkte, %40 saydamlıkta bir fırça
+            Pen xKalem = new Pen(Color.Red); // Kırmızı renkte x ekseni için kalem
+            Pen yKalem = new Pen(Color.Green); // Yeşil renkte y ekseni için kalem
 
             // Picturebox'ın boyutları
             int pbGenislik = pictureBox1.Width;
             int pbYukseklik = pictureBox1.Height;
 
-            // Picturebox'ın merkez koordinatları
-            int pbMerkezX = pbGenislik / 2;
-            int pbMerkezY = pbYukseklik / 2;
-
-
-            // Yatay ekseni çiz
-            e.Graphics.DrawLine(kalem, 0, pbMerkezY, pbGenislik, pbMerkezY);
-            // Dikey ekseni çiz
-            e.Graphics.DrawLine(kalem, pbMerkezX, 0, pbMerkezX, pbYukseklik);
+            // Yatay ekseni çiz (x ekseni)
+            e.Graphics.DrawLine(kalem, 0, pbYukseklik / 2, pbGenislik, pbYukseklik / 2);
+            // Dikey ekseni çiz (y ekseni)
+            e.Graphics.DrawLine(kalem, pbGenislik / 2, pbYukseklik, pbGenislik / 2, 0);
 
             // Yatay eksende kılavuz çizgileri
             for (int i = 0; i < pbGenislik; i += 10)
-                e.Graphics.DrawLine(kalem, i, pbMerkezY - 2, i, pbMerkezY + 2);
+                e.Graphics.DrawLine(kalem, i, pbYukseklik / 2 - 2, i, pbYukseklik / 2 + 2);
 
             // Dikey eksende kılavuz çizgileri
             for (int i = 0; i < pbYukseklik; i += 10)
-                e.Graphics.DrawLine(kalem, pbMerkezX - 2, i, pbMerkezX + 2, i);
+                e.Graphics.DrawLine(kalem, pbGenislik / 2 - 2, i, pbGenislik / 2 + 2, i);
+
+            // Koordinat etiketlerini çiz
+            Font etiketFont = new Font("Arial", 8);
+            Brush etiketBrush = Brushes.Black;
+
+            // X ekseni etiketi
+            e.Graphics.DrawString("X", etiketFont, etiketBrush, pbGenislik - 15, pbYukseklik / 2 - 15);
+            // Y ekseni etiketi
+            e.Graphics.DrawString("Y", etiketFont, etiketBrush, pbGenislik / 2 + 5, 5);
 
             // Orta noktayı gösteren kare çiz
-            e.Graphics.FillRectangle(fırca, pbMerkezX - 2, pbMerkezY - 2, 5, 5);
+            e.Graphics.FillRectangle(Brushes.Black, pbGenislik / 2 - 2, pbYukseklik / 2 - 2, 5, 5);
 
-            // Kullanılan nesneleri temizle
+            // Kullanılan kalemleri ve fontu temizle
             kalem.Dispose();
-            fırca.Dispose();
+            xKalem.Dispose();
+            yKalem.Dispose();
+            etiketFont.Dispose();
+        
         }
+
+    
+
+       
     }
 }

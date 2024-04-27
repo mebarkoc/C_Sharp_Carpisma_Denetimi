@@ -29,28 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.derinlikBirBaslik = new System.Windows.Forms.Label();
             this.koordinatlarIkiBaslik = new System.Windows.Forms.Label();
             this.koordinatlarBirBaslik = new System.Windows.Forms.Label();
-            this.kenarlarIkiDortDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarIkiUcDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarIkiIkiDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarIkiBirDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarIkiBaslik = new System.Windows.Forms.Label();
-            this.kenarlarBirDortDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarBirUcDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarBirIkiDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarBirBirDegisen = new System.Windows.Forms.TextBox();
+            this.derinlikIkiDegisen = new System.Windows.Forms.TextBox();
+            this.genislikIkiDegisen = new System.Windows.Forms.TextBox();
+            this.genislikIkiBaslik = new System.Windows.Forms.Label();
+            this.derinlikBirDegisen = new System.Windows.Forms.TextBox();
+            this.genislikBirDegisen = new System.Windows.Forms.TextBox();
             this.butonCalistir = new System.Windows.Forms.Button();
-            this.zIkiDegisen = new System.Windows.Forms.TextBox();
             this.yIkiDegisen = new System.Windows.Forms.TextBox();
             this.xIkiDegisen = new System.Windows.Forms.TextBox();
-            this.zIkiBaslik = new System.Windows.Forms.Label();
             this.yIkiBaslik = new System.Windows.Forms.Label();
             this.xIkiBaslik = new System.Windows.Forms.Label();
-            this.zBirDegisen = new System.Windows.Forms.TextBox();
             this.yBirDegisen = new System.Windows.Forms.TextBox();
             this.xBirDegisen = new System.Windows.Forms.TextBox();
-            this.zBirBaslik = new System.Windows.Forms.Label();
             this.yBirBaslik = new System.Windows.Forms.Label();
             this.xBirBaslik = new System.Windows.Forms.Label();
             this.yukseklikIkiDegisen = new System.Windows.Forms.TextBox();
@@ -59,7 +53,7 @@
             this.yaricapIkiBaslik = new System.Windows.Forms.Label();
             this.yukseklikBirDegisen = new System.Windows.Forms.TextBox();
             this.yaricapBirDegisen = new System.Windows.Forms.TextBox();
-            this.kenarlarBirBaslik = new System.Windows.Forms.Label();
+            this.genislikBirBaslik = new System.Windows.Forms.Label();
             this.yukseklikBirBaslik = new System.Windows.Forms.Label();
             this.yaricapBirBaslik = new System.Windows.Forms.Label();
             this.secilenBirDegisen = new System.Windows.Forms.Label();
@@ -79,28 +73,22 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.derinlikBirBaslik);
             this.groupBox1.Controls.Add(this.koordinatlarIkiBaslik);
             this.groupBox1.Controls.Add(this.koordinatlarBirBaslik);
-            this.groupBox1.Controls.Add(this.kenarlarIkiDortDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarIkiUcDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarIkiIkiDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarIkiBirDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarIkiBaslik);
-            this.groupBox1.Controls.Add(this.kenarlarBirDortDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarBirUcDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarBirIkiDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarBirBirDegisen);
+            this.groupBox1.Controls.Add(this.derinlikIkiDegisen);
+            this.groupBox1.Controls.Add(this.genislikIkiDegisen);
+            this.groupBox1.Controls.Add(this.genislikIkiBaslik);
+            this.groupBox1.Controls.Add(this.derinlikBirDegisen);
+            this.groupBox1.Controls.Add(this.genislikBirDegisen);
             this.groupBox1.Controls.Add(this.butonCalistir);
-            this.groupBox1.Controls.Add(this.zIkiDegisen);
             this.groupBox1.Controls.Add(this.yIkiDegisen);
             this.groupBox1.Controls.Add(this.xIkiDegisen);
-            this.groupBox1.Controls.Add(this.zIkiBaslik);
             this.groupBox1.Controls.Add(this.yIkiBaslik);
             this.groupBox1.Controls.Add(this.xIkiBaslik);
-            this.groupBox1.Controls.Add(this.zBirDegisen);
             this.groupBox1.Controls.Add(this.yBirDegisen);
             this.groupBox1.Controls.Add(this.xBirDegisen);
-            this.groupBox1.Controls.Add(this.zBirBaslik);
             this.groupBox1.Controls.Add(this.yBirBaslik);
             this.groupBox1.Controls.Add(this.xBirBaslik);
             this.groupBox1.Controls.Add(this.yukseklikIkiDegisen);
@@ -109,7 +97,7 @@
             this.groupBox1.Controls.Add(this.yaricapIkiBaslik);
             this.groupBox1.Controls.Add(this.yukseklikBirDegisen);
             this.groupBox1.Controls.Add(this.yaricapBirDegisen);
-            this.groupBox1.Controls.Add(this.kenarlarBirBaslik);
+            this.groupBox1.Controls.Add(this.genislikBirBaslik);
             this.groupBox1.Controls.Add(this.yukseklikBirBaslik);
             this.groupBox1.Controls.Add(this.yaricapBirBaslik);
             this.groupBox1.Controls.Add(this.secilenBirDegisen);
@@ -127,6 +115,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bayrağı bayrak yapan üzerindeki kandır. Toprak, uğrunda ölen varsa vatandır.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(333, 377);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Derinlik :";
+            // 
+            // derinlikBirBaslik
+            // 
+            this.derinlikBirBaslik.AutoSize = true;
+            this.derinlikBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.derinlikBirBaslik.Location = new System.Drawing.Point(24, 378);
+            this.derinlikBirBaslik.Name = "derinlikBirBaslik";
+            this.derinlikBirBaslik.Size = new System.Drawing.Size(82, 24);
+            this.derinlikBirBaslik.TabIndex = 51;
+            this.derinlikBirBaslik.Text = "Derinlik :";
             // 
             // koordinatlarIkiBaslik
             // 
@@ -148,79 +156,47 @@
             this.koordinatlarBirBaslik.TabIndex = 49;
             this.koordinatlarBirBaslik.Text = "Koordinatlar :";
             // 
-            // kenarlarIkiDortDegisen
+            // derinlikIkiDegisen
             // 
-            this.kenarlarIkiDortDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarIkiDortDegisen.Location = new System.Drawing.Point(499, 369);
-            this.kenarlarIkiDortDegisen.Name = "kenarlarIkiDortDegisen";
-            this.kenarlarIkiDortDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarIkiDortDegisen.TabIndex = 48;
+            this.derinlikIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.derinlikIkiDegisen.Location = new System.Drawing.Point(429, 374);
+            this.derinlikIkiDegisen.Name = "derinlikIkiDegisen";
+            this.derinlikIkiDegisen.Size = new System.Drawing.Size(100, 28);
+            this.derinlikIkiDegisen.TabIndex = 46;
             // 
-            // kenarlarIkiUcDegisen
+            // genislikIkiDegisen
             // 
-            this.kenarlarIkiUcDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarIkiUcDegisen.Location = new System.Drawing.Point(444, 369);
-            this.kenarlarIkiUcDegisen.Name = "kenarlarIkiUcDegisen";
-            this.kenarlarIkiUcDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarIkiUcDegisen.TabIndex = 47;
+            this.genislikIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.genislikIkiDegisen.Location = new System.Drawing.Point(429, 330);
+            this.genislikIkiDegisen.Name = "genislikIkiDegisen";
+            this.genislikIkiDegisen.Size = new System.Drawing.Size(100, 28);
+            this.genislikIkiDegisen.TabIndex = 45;
             // 
-            // kenarlarIkiIkiDegisen
+            // genislikIkiBaslik
             // 
-            this.kenarlarIkiIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarIkiIkiDegisen.Location = new System.Drawing.Point(387, 369);
-            this.kenarlarIkiIkiDegisen.Name = "kenarlarIkiIkiDegisen";
-            this.kenarlarIkiIkiDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarIkiIkiDegisen.TabIndex = 46;
+            this.genislikIkiBaslik.AutoSize = true;
+            this.genislikIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.genislikIkiBaslik.Location = new System.Drawing.Point(329, 333);
+            this.genislikIkiBaslik.Name = "genislikIkiBaslik";
+            this.genislikIkiBaslik.Size = new System.Drawing.Size(86, 24);
+            this.genislikIkiBaslik.TabIndex = 44;
+            this.genislikIkiBaslik.Text = "Genişlik :";
             // 
-            // kenarlarIkiBirDegisen
+            // derinlikBirDegisen
             // 
-            this.kenarlarIkiBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarIkiBirDegisen.Location = new System.Drawing.Point(334, 369);
-            this.kenarlarIkiBirDegisen.Name = "kenarlarIkiBirDegisen";
-            this.kenarlarIkiBirDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarIkiBirDegisen.TabIndex = 45;
+            this.derinlikBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.derinlikBirDegisen.Location = new System.Drawing.Point(124, 375);
+            this.derinlikBirDegisen.Name = "derinlikBirDegisen";
+            this.derinlikBirDegisen.Size = new System.Drawing.Size(100, 28);
+            this.derinlikBirDegisen.TabIndex = 41;
             // 
-            // kenarlarIkiBaslik
+            // genislikBirDegisen
             // 
-            this.kenarlarIkiBaslik.AutoSize = true;
-            this.kenarlarIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarIkiBaslik.Location = new System.Drawing.Point(329, 333);
-            this.kenarlarIkiBaslik.Name = "kenarlarIkiBaslik";
-            this.kenarlarIkiBaslik.Size = new System.Drawing.Size(167, 24);
-            this.kenarlarIkiBaslik.TabIndex = 44;
-            this.kenarlarIkiBaslik.Text = "Kenar Uzunlukları :";
-            // 
-            // kenarlarBirDortDegisen
-            // 
-            this.kenarlarBirDortDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarBirDortDegisen.Location = new System.Drawing.Point(194, 369);
-            this.kenarlarBirDortDegisen.Name = "kenarlarBirDortDegisen";
-            this.kenarlarBirDortDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarBirDortDegisen.TabIndex = 43;
-            // 
-            // kenarlarBirUcDegisen
-            // 
-            this.kenarlarBirUcDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarBirUcDegisen.Location = new System.Drawing.Point(139, 369);
-            this.kenarlarBirUcDegisen.Name = "kenarlarBirUcDegisen";
-            this.kenarlarBirUcDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarBirUcDegisen.TabIndex = 42;
-            // 
-            // kenarlarBirIkiDegisen
-            // 
-            this.kenarlarBirIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarBirIkiDegisen.Location = new System.Drawing.Point(82, 369);
-            this.kenarlarBirIkiDegisen.Name = "kenarlarBirIkiDegisen";
-            this.kenarlarBirIkiDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarBirIkiDegisen.TabIndex = 41;
-            // 
-            // kenarlarBirBirDegisen
-            // 
-            this.kenarlarBirBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarBirBirDegisen.Location = new System.Drawing.Point(29, 369);
-            this.kenarlarBirBirDegisen.Name = "kenarlarBirBirDegisen";
-            this.kenarlarBirBirDegisen.Size = new System.Drawing.Size(39, 28);
-            this.kenarlarBirBirDegisen.TabIndex = 40;
+            this.genislikBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.genislikBirDegisen.Location = new System.Drawing.Point(124, 330);
+            this.genislikBirDegisen.Name = "genislikBirDegisen";
+            this.genislikBirDegisen.Size = new System.Drawing.Size(100, 28);
+            this.genislikBirDegisen.TabIndex = 40;
             // 
             // butonCalistir
             // 
@@ -233,45 +209,27 @@
             this.butonCalistir.UseVisualStyleBackColor = true;
             this.butonCalistir.Click += new System.EventHandler(this.butonCalistir_Click);
             // 
-            // zIkiDegisen
-            // 
-            this.zIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.zIkiDegisen.Location = new System.Drawing.Point(463, 487);
-            this.zIkiDegisen.Name = "zIkiDegisen";
-            this.zIkiDegisen.Size = new System.Drawing.Size(39, 28);
-            this.zIkiDegisen.TabIndex = 38;
-            // 
             // yIkiDegisen
             // 
             this.yIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yIkiDegisen.Location = new System.Drawing.Point(398, 487);
+            this.yIkiDegisen.Location = new System.Drawing.Point(454, 487);
             this.yIkiDegisen.Name = "yIkiDegisen";
-            this.yIkiDegisen.Size = new System.Drawing.Size(39, 28);
+            this.yIkiDegisen.Size = new System.Drawing.Size(71, 28);
             this.yIkiDegisen.TabIndex = 37;
             // 
             // xIkiDegisen
             // 
             this.xIkiDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xIkiDegisen.Location = new System.Drawing.Point(333, 487);
+            this.xIkiDegisen.Location = new System.Drawing.Point(337, 487);
             this.xIkiDegisen.Name = "xIkiDegisen";
-            this.xIkiDegisen.Size = new System.Drawing.Size(39, 28);
+            this.xIkiDegisen.Size = new System.Drawing.Size(66, 28);
             this.xIkiDegisen.TabIndex = 36;
-            // 
-            // zIkiBaslik
-            // 
-            this.zIkiBaslik.AutoSize = true;
-            this.zIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.zIkiBaslik.Location = new System.Drawing.Point(469, 460);
-            this.zIkiBaslik.Name = "zIkiBaslik";
-            this.zIkiBaslik.Size = new System.Drawing.Size(22, 24);
-            this.zIkiBaslik.TabIndex = 35;
-            this.zIkiBaslik.Text = "Z";
             // 
             // yIkiBaslik
             // 
             this.yIkiBaslik.AutoSize = true;
             this.yIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yIkiBaslik.Location = new System.Drawing.Point(408, 460);
+            this.yIkiBaslik.Location = new System.Drawing.Point(479, 460);
             this.yIkiBaslik.Name = "yIkiBaslik";
             this.yIkiBaslik.Size = new System.Drawing.Size(22, 24);
             this.yIkiBaslik.TabIndex = 34;
@@ -281,51 +239,33 @@
             // 
             this.xIkiBaslik.AutoSize = true;
             this.xIkiBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xIkiBaslik.Location = new System.Drawing.Point(339, 460);
+            this.xIkiBaslik.Location = new System.Drawing.Point(362, 460);
             this.xIkiBaslik.Name = "xIkiBaslik";
             this.xIkiBaslik.Size = new System.Drawing.Size(24, 24);
             this.xIkiBaslik.TabIndex = 33;
             this.xIkiBaslik.Text = "X";
             // 
-            // zBirDegisen
-            // 
-            this.zBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.zBirDegisen.Location = new System.Drawing.Point(162, 487);
-            this.zBirDegisen.Name = "zBirDegisen";
-            this.zBirDegisen.Size = new System.Drawing.Size(39, 28);
-            this.zBirDegisen.TabIndex = 32;
-            // 
             // yBirDegisen
             // 
             this.yBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yBirDegisen.Location = new System.Drawing.Point(97, 487);
+            this.yBirDegisen.Location = new System.Drawing.Point(147, 487);
             this.yBirDegisen.Name = "yBirDegisen";
-            this.yBirDegisen.Size = new System.Drawing.Size(39, 28);
+            this.yBirDegisen.Size = new System.Drawing.Size(63, 28);
             this.yBirDegisen.TabIndex = 31;
             // 
             // xBirDegisen
             // 
             this.xBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xBirDegisen.Location = new System.Drawing.Point(32, 487);
+            this.xBirDegisen.Location = new System.Drawing.Point(43, 487);
             this.xBirDegisen.Name = "xBirDegisen";
-            this.xBirDegisen.Size = new System.Drawing.Size(39, 28);
+            this.xBirDegisen.Size = new System.Drawing.Size(61, 28);
             this.xBirDegisen.TabIndex = 30;
-            // 
-            // zBirBaslik
-            // 
-            this.zBirBaslik.AutoSize = true;
-            this.zBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.zBirBaslik.Location = new System.Drawing.Point(168, 460);
-            this.zBirBaslik.Name = "zBirBaslik";
-            this.zBirBaslik.Size = new System.Drawing.Size(22, 24);
-            this.zBirBaslik.TabIndex = 29;
-            this.zBirBaslik.Text = "Z";
             // 
             // yBirBaslik
             // 
             this.yBirBaslik.AutoSize = true;
             this.yBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yBirBaslik.Location = new System.Drawing.Point(107, 460);
+            this.yBirBaslik.Location = new System.Drawing.Point(170, 460);
             this.yBirBaslik.Name = "yBirBaslik";
             this.yBirBaslik.Size = new System.Drawing.Size(22, 24);
             this.yBirBaslik.TabIndex = 28;
@@ -335,7 +275,7 @@
             // 
             this.xBirBaslik.AutoSize = true;
             this.xBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.xBirBaslik.Location = new System.Drawing.Point(38, 460);
+            this.xBirBaslik.Location = new System.Drawing.Point(60, 460);
             this.xBirBaslik.Name = "xBirBaslik";
             this.xBirBaslik.Size = new System.Drawing.Size(24, 24);
             this.xBirBaslik.TabIndex = 27;
@@ -380,7 +320,7 @@
             // yukseklikBirDegisen
             // 
             this.yukseklikBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yukseklikBirDegisen.Location = new System.Drawing.Point(124, 290);
+            this.yukseklikBirDegisen.Location = new System.Drawing.Point(124, 291);
             this.yukseklikBirDegisen.Name = "yukseklikBirDegisen";
             this.yukseklikBirDegisen.Size = new System.Drawing.Size(100, 28);
             this.yukseklikBirDegisen.TabIndex = 16;
@@ -388,26 +328,26 @@
             // yaricapBirDegisen
             // 
             this.yaricapBirDegisen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yaricapBirDegisen.Location = new System.Drawing.Point(124, 250);
+            this.yaricapBirDegisen.Location = new System.Drawing.Point(124, 251);
             this.yaricapBirDegisen.Name = "yaricapBirDegisen";
             this.yaricapBirDegisen.Size = new System.Drawing.Size(100, 28);
             this.yaricapBirDegisen.TabIndex = 15;
             // 
-            // kenarlarBirBaslik
+            // genislikBirBaslik
             // 
-            this.kenarlarBirBaslik.AutoSize = true;
-            this.kenarlarBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kenarlarBirBaslik.Location = new System.Drawing.Point(24, 333);
-            this.kenarlarBirBaslik.Name = "kenarlarBirBaslik";
-            this.kenarlarBirBaslik.Size = new System.Drawing.Size(167, 24);
-            this.kenarlarBirBaslik.TabIndex = 13;
-            this.kenarlarBirBaslik.Text = "Kenar Uzunlukları :";
+            this.genislikBirBaslik.AutoSize = true;
+            this.genislikBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.genislikBirBaslik.Location = new System.Drawing.Point(24, 333);
+            this.genislikBirBaslik.Name = "genislikBirBaslik";
+            this.genislikBirBaslik.Size = new System.Drawing.Size(86, 24);
+            this.genislikBirBaslik.TabIndex = 13;
+            this.genislikBirBaslik.Text = "Genişlik :";
             // 
             // yukseklikBirBaslik
             // 
             this.yukseklikBirBaslik.AutoSize = true;
             this.yukseklikBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yukseklikBirBaslik.Location = new System.Drawing.Point(24, 293);
+            this.yukseklikBirBaslik.Location = new System.Drawing.Point(24, 294);
             this.yukseklikBirBaslik.Name = "yukseklikBirBaslik";
             this.yukseklikBirBaslik.Size = new System.Drawing.Size(98, 24);
             this.yukseklikBirBaslik.TabIndex = 12;
@@ -417,7 +357,7 @@
             // 
             this.yaricapBirBaslik.AutoSize = true;
             this.yaricapBirBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.yaricapBirBaslik.Location = new System.Drawing.Point(24, 253);
+            this.yaricapBirBaslik.Location = new System.Drawing.Point(24, 254);
             this.yaricapBirBaslik.Name = "yaricapBirBaslik";
             this.yaricapBirBaslik.Size = new System.Drawing.Size(83, 24);
             this.yaricapBirBaslik.TabIndex = 11;
@@ -465,7 +405,7 @@
             // 
             this.ikinciSekilBaslik.AutoSize = true;
             this.ikinciSekilBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ikinciSekilBaslik.ForeColor = System.Drawing.Color.Blue;
+            this.ikinciSekilBaslik.ForeColor = System.Drawing.Color.Red;
             this.ikinciSekilBaslik.Location = new System.Drawing.Point(400, 132);
             this.ikinciSekilBaslik.Name = "ikinciSekilBaslik";
             this.ikinciSekilBaslik.Size = new System.Drawing.Size(84, 25);
@@ -564,7 +504,7 @@
         private System.Windows.Forms.Label secilenİkiBaslik;
         private System.Windows.Forms.Label secilenBirDegisen;
         private System.Windows.Forms.Label secilenBirBaslik;
-        private System.Windows.Forms.Label kenarlarBirBaslik;
+        private System.Windows.Forms.Label genislikBirBaslik;
         private System.Windows.Forms.Label yukseklikBirBaslik;
         private System.Windows.Forms.Label yaricapBirBaslik;
         private System.Windows.Forms.TextBox yukseklikIkiDegisen;
@@ -575,28 +515,22 @@
         private System.Windows.Forms.TextBox yaricapBirDegisen;
         private System.Windows.Forms.TextBox yBirDegisen;
         private System.Windows.Forms.TextBox xBirDegisen;
-        private System.Windows.Forms.Label zBirBaslik;
         private System.Windows.Forms.Label yBirBaslik;
         private System.Windows.Forms.Label xBirBaslik;
-        private System.Windows.Forms.TextBox zIkiDegisen;
         private System.Windows.Forms.TextBox yIkiDegisen;
         private System.Windows.Forms.TextBox xIkiDegisen;
-        private System.Windows.Forms.Label zIkiBaslik;
         private System.Windows.Forms.Label yIkiBaslik;
         private System.Windows.Forms.Label xIkiBaslik;
-        private System.Windows.Forms.TextBox zBirDegisen;
         private System.Windows.Forms.Button butonCalistir;
-        private System.Windows.Forms.TextBox kenarlarBirDortDegisen;
-        private System.Windows.Forms.TextBox kenarlarBirUcDegisen;
-        private System.Windows.Forms.TextBox kenarlarBirIkiDegisen;
-        private System.Windows.Forms.TextBox kenarlarBirBirDegisen;
-        private System.Windows.Forms.TextBox kenarlarIkiDortDegisen;
-        private System.Windows.Forms.TextBox kenarlarIkiUcDegisen;
-        private System.Windows.Forms.TextBox kenarlarIkiIkiDegisen;
-        private System.Windows.Forms.TextBox kenarlarIkiBirDegisen;
-        private System.Windows.Forms.Label kenarlarIkiBaslik;
+        private System.Windows.Forms.TextBox derinlikBirDegisen;
+        private System.Windows.Forms.TextBox genislikBirDegisen;
+        private System.Windows.Forms.TextBox derinlikIkiDegisen;
+        private System.Windows.Forms.TextBox genislikIkiDegisen;
+        private System.Windows.Forms.Label genislikIkiBaslik;
         private System.Windows.Forms.Label koordinatlarIkiBaslik;
         private System.Windows.Forms.Label koordinatlarBirBaslik;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label derinlikBirBaslik;
     }
 }
 

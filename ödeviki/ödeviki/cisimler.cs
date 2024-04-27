@@ -1,4 +1,16 @@
-﻿using System;
+﻿/****************************************************************************
+**					           SAKARYA ÜNİVERSİTESİ
+**			         BİLGİSAYAR VE BİLİŞİM BİLİMLERİ FAKÜLTESİ
+**				           BİLGİSAYAR MÜHENDİSLİĞİ BÖLÜMÜ
+**				          NESNEYE DAYALI PROGRAMLAMA ÖDEVİ
+**	
+**				ÖDEV NUMARASI…............: 2023-2024 Bahar Dönemi İkinci Ödev
+**				ÖĞRENCİ ADI...............: Muhammed Emin BARKOÇ
+**				ÖĞRENCİ NUMARASI..........: G231210452
+**				DERS GRUBU…………............: İkinci Öğretim A Grubu
+****************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,12 +20,9 @@ using System.Windows.Forms;
 
 namespace ödeviki
 {
-    public static class Cisimler
+    public class Cisimler
     {
        
-        public static List<object> CisimlerListesi = new List<object>();   
-        
-
     }
  
 
@@ -38,38 +47,23 @@ namespace ödeviki
     {
         public Nokta SolUstKose { get; set; }   
         public int Genislik {  get; set; }
-        public int Yuksekik {  get; set; }
+        public int Yukseklik {  get; set; }
 
         public Dortgen (int x, int y, int genislik, int yukseklik)
         {
             SolUstKose = new Nokta( x, y ) ;
             Genislik   = genislik;
-            Yuksekik   = yukseklik;
+            Yukseklik   = yukseklik;
         }
     }
 
 
-    public class Dikdörtgen
+    public class DıkdortgenPrizma 
     {
-        public Nokta SolUstKose { get; set; }
-        public int Genislik { get; set; }
+        public Dortgen Taban { get; set; }
         public int Yukseklik { get; set; }
 
-        public Dikdörtgen(int x, int y, int genislik, int yukseklik)
-        {
-            SolUstKose = new Nokta(x, y);
-            Genislik = genislik;
-            Yukseklik = yukseklik;
-        }
-
-    }
-
-    public class Prizma
-    {
-        public Dikdörtgen Taban { get; set; }
-        public int Yukseklik { get; set; }
-
-        public Prizma(Dikdörtgen taban, int yukseklik)
+        public DıkdortgenPrizma(Dortgen taban, int yukseklik)
         {
             Taban = taban;
             Yukseklik = yukseklik;
@@ -79,24 +73,24 @@ namespace ödeviki
 
     public class Cember
     {
-        public Nokta Merkez { get; set; }
+        public Nokta SolUstNokta { get; set; }
         public int YariCap { get; set; }
 
-        public Cember(Nokta merkez, int yariCap)
+        public Cember(int x, int y, int yariCap)
         {
-            Merkez = merkez;
+            SolUstNokta = new Nokta( x, y);
             YariCap = yariCap;
         }
     }
 
     public class Kure
     {
-        public Nokta Merkez { get; set; }
+        public Nokta SolUstNokta { get; set; }
         public int YariCap { get; set; }
 
-        public Kure(Nokta merkez, int yariCap)
+        public Kure(int x, int y, int yariCap)
         {
-            Merkez = merkez;
+            SolUstNokta = new Nokta(x , y);
             YariCap = yariCap;
         }
     }
