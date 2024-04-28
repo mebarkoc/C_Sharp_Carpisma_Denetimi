@@ -22,6 +22,7 @@ using System.Linq.Expressions;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Permissions;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -253,30 +254,9 @@ namespace ödeviki
                     break;
 
                 case 11:
-                    secilenBirDegisen.Text = "Yüzey";
-                    kureIkideAktif();
-                    break;
-
-                case 12:
-                    secilenBirDegisen.Text = "Yüzey";
-                    dikdortgenPrizmaIkideAktif();
-                    break;
-
-                case 13:
-                    secilenBirDegisen.Text = "Yüzey";
-                    silindirIkideAktif();
-                    break;
-
-                case 14:
                     kureBirdeAktif();
                     dikdortgenPrizmaIkideAktif();
                     break;
-
-                case 15:
-                    dikdortgenPrizmaBirdeAktif();
-                    dikdortgenPrizmaIkideAktif();
-                    break;
-
             }
         }
 
@@ -284,6 +264,8 @@ namespace ödeviki
         {   
             InitializeComponent();
         
+            
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
         }
@@ -319,7 +301,7 @@ namespace ödeviki
 
             return dortgen;
         }
-        public void cemberBireCiz()
+        public Cember cemberBireCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
@@ -332,8 +314,10 @@ namespace ödeviki
             cember.SolUstNokta.X = koordinatBirX - cemberYaricap;
             cember.SolUstNokta.Y = koordinatBirY - cemberYaricap;
             gCember.DrawEllipse(Pens.Red, cember.SolUstNokta.X, cember.SolUstNokta.Y, cember.YariCap * 2, cember.YariCap * 2);
+
+            return cember;
         }
-        public void cemberIkiyeCiz()
+        public Cember cemberIkiyeCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
@@ -346,8 +330,10 @@ namespace ödeviki
             cember.SolUstNokta.X = koordinatIkiX - cemberYaricap;
             cember.SolUstNokta.Y = koordinatIkiY - cemberYaricap;
             gCember.DrawEllipse(Pens.Red, cember.SolUstNokta.X, cember.SolUstNokta.Y, cember.YariCap*2, cember.YariCap*2);
+
+            return cember;
         }
-        public void dıkdortgenBireCiz()
+        public DıkdortgenPrizma dıkdortgenBireCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
@@ -356,9 +342,10 @@ namespace ödeviki
 
             Dortgen dortgen = new Dortgen(koordinatBirX, koordinatBirY, Convert.ToInt32(genislikBirDegisen.Text), Convert.ToInt32(yukseklikBirDegisen.Text));
             DıkdortgenPrizma dıkdortgenPrizma = new DıkdortgenPrizma(dortgen, Convert.ToInt32(yukseklikBirDegisen.Text));
-            dortgen.SolUstKose.X = koordinatBirX - Convert.ToInt32(genislikBirDegisen.Text) / 2;
-            dortgen.SolUstKose.Y = koordinatBirY - Convert.ToInt32(yukseklikBirDegisen.Text) / 2;
+            dortgen.SolUstKose.X = koordinatBirX - Convert.ToInt32(genislikBirDegisen.Text) + Convert.ToInt32(genislikBirDegisen.Text) / 6;
+            dortgen.SolUstKose.Y = koordinatBirY - Convert.ToInt32(yukseklikBirDegisen.Text) / 6;
             Graphics gDıkdortgenPrizma = pictureBox1.CreateGraphics();
+           
             gDıkdortgenPrizma.DrawRectangle(Pens.Blue, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yukseklik);
 
             double derinlikReferans = Convert.ToInt32(derinlikBirDegisen.Text) / Math.Sqrt(2);
@@ -369,9 +356,11 @@ namespace ödeviki
             gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans) + dortgen.Yukseklik);
             gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
             gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
-            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y -  Convert.ToSingle(derinlikReferans)); 
+            gDıkdortgenPrizma.DrawLine(Pens.Blue, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y -  Convert.ToSingle(derinlikReferans));
+
+            return dıkdortgenPrizma;
         }
-        public void dıkdortgenIkideCiz()
+        public DıkdortgenPrizma dıkdortgenIkideCiz()
         {
             int pictureBoxOrijinX = pictureBox1.Width / 2;
             int pictureBoxOrijinY = pictureBox1.Height / 2;
@@ -380,8 +369,8 @@ namespace ödeviki
 
             Dortgen dortgen = new Dortgen(koordinatIkiX, koordinatIkiY, Convert.ToInt32(genislikIkiDegisen.Text), Convert.ToInt32(yukseklikIkiDegisen.Text));
             DıkdortgenPrizma dıkdortgenPrizma = new DıkdortgenPrizma(dortgen, Convert.ToInt32(yukseklikIkiDegisen.Text));
-            dortgen.SolUstKose.X = koordinatIkiX - Convert.ToInt32(genislikIkiDegisen.Text) / 2;
-            dortgen.SolUstKose.Y = koordinatIkiY - Convert.ToInt32(yukseklikIkiDegisen.Text) / 2;
+            dortgen.SolUstKose.X = koordinatIkiX - Convert.ToInt32(genislikIkiDegisen.Text)  + Convert.ToInt32(genislikIkiDegisen.Text) / 6;
+            dortgen.SolUstKose.Y = koordinatIkiY - Convert.ToInt32(yukseklikIkiDegisen.Text) / 6;
             Graphics gDıkdortgenPrizma = pictureBox1.CreateGraphics();
             gDıkdortgenPrizma.DrawRectangle(Pens.Red, dortgen.SolUstKose.X, dortgen.SolUstKose.Y, dortgen.Genislik, dortgen.Yukseklik);
 
@@ -394,6 +383,8 @@ namespace ödeviki
             gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
             gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + dortgen.Genislik + Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans));
             gDıkdortgenPrizma.DrawLine(Pens.Red, dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y + dortgen.Yukseklik - Convert.ToSingle(derinlikReferans), dortgen.SolUstKose.X + Convert.ToSingle(derinlikReferans) + dortgen.Genislik, dortgen.SolUstKose.Y - Convert.ToSingle(derinlikReferans));
+       
+            return dıkdortgenPrizma;
         }
         public void kureBireCiz()
         {
@@ -479,37 +470,114 @@ namespace ödeviki
             pictureBox1.Refresh();
             
             int seciliCarpDenetComboBoxIndex = carpDenetCombobox.SelectedIndex;
-           
+
             switch (seciliCarpDenetComboBoxIndex)
             {
+
                 case 0:
-                    Nokta nokta = new Nokta(noktaBireCiz().X, noktaBireCiz().Y);
-                    Dortgen dortgen = new Dortgen(dortgenIkiyeCiz().SolUstKose.X, dortgenIkiyeCiz().SolUstKose.Y,dortgenIkiyeCiz().Genislik, dortgenIkiyeCiz().Yukseklik);
+                    Nokta noktaBir = new Nokta(noktaBireCiz().X, noktaBireCiz().Y);
+                    Dortgen dortgenIki = new Dortgen(dortgenIkiyeCiz().SolUstKose.X, dortgenIkiyeCiz().SolUstKose.Y, dortgenIkiyeCiz().Genislik, dortgenIkiyeCiz().Yukseklik);
+
 
                     noktaBireCiz();
                     dortgenIkiyeCiz();
-                    Carpisma.noktaDortgenCarpismaVarMi(nokta, dortgen);
-                    break;
+                    Carpisma.noktaDortgenCarpismaVarMi(noktaBir, dortgenIki);
 
-                case 1: 
+                    if (Carpisma.noktaDortgenCarpismaVarMi(noktaBir, dortgenIki) == true)
+                    {
+                        carpismaVarBaslik.ForeColor = Color.Black;
+                        carpismaYokBaslik.ForeColor = Color.Gray;
+                    }
+                    else
+                    {
+                        carpismaYokBaslik.ForeColor = Color.Black;   
+                        carpismaVarBaslik.ForeColor = Color.Gray;    
+                    }
+
+                    break; // nokta ile dörtgen çizer ve çarpışma denetimini yapar.
+
+                case 1:
+                    Cember cemberIki = new Cember(cemberIkiyeCiz().SolUstNokta.X, cemberIkiyeCiz().SolUstNokta.Y, cemberIkiyeCiz().YariCap);
+                    Nokta noktaBirCaseBir = new Nokta(noktaBireCiz().X, noktaBireCiz().Y);
+
                     noktaBireCiz();
                     cemberIkiyeCiz();
-                    break;
+                    Carpisma.noktaCemberCarpismaVarMi(noktaBirCaseBir, cemberIki);
+
+                    if (Carpisma.noktaCemberCarpismaVarMi(noktaBirCaseBir, cemberIki) == true)
+                    {
+                        carpismaVarBaslik.ForeColor = Color.Black;
+                        carpismaYokBaslik.ForeColor = Color.Gray;
+                    }
+                    else
+                    {
+                        carpismaYokBaslik.ForeColor = Color.Black;
+                        carpismaVarBaslik.ForeColor = Color.Gray;
+                    }
+
+                    break; // nokta ile çember çizer ve çarpışma denetimi yapar. 
 
                 case 2:
+                    DıkdortgenPrizma dikdortgenBir = new DıkdortgenPrizma(dıkdortgenBireCiz().Taban, dıkdortgenBireCiz().Yukseklik);
+                    DıkdortgenPrizma dikdortgenIki = new DıkdortgenPrizma(dıkdortgenIkideCiz().Taban, dıkdortgenIkideCiz().Yukseklik);
+
                     dıkdortgenBireCiz();
                     dıkdortgenIkideCiz();
-                    break;
+                    Carpisma.dikdortgenDikdortgenCarpismaVarMi(dikdortgenBir, dikdortgenIki);
+
+                    
+
+                    if (Carpisma.dikdortgenDikdortgenCarpismaVarMi(dikdortgenBir, dikdortgenIki))
+                    {
+                        carpismaVarBaslik.ForeColor = Color.Black;
+                        carpismaYokBaslik.ForeColor = Color.Gray;
+                    }
+                    else
+                    {
+                        carpismaYokBaslik.ForeColor = Color.Black;
+                        carpismaVarBaslik.ForeColor = Color.Gray;
+                    }
+
+                    break; // dikdörtgen ile dikdörtgen çizer ve çarpışma denetimi yapar.
 
                 case 3:
+                    DıkdortgenPrizma dikdortgen = new DıkdortgenPrizma(dıkdortgenBireCiz().Taban, dıkdortgenBireCiz().Yukseklik);
+                    Cember cember = new Cember(cemberIkiyeCiz().SolUstNokta.X, cemberIkiyeCiz().SolUstNokta.Y, cemberIkiyeCiz().YariCap);
+
                     dıkdortgenBireCiz();
                     cemberIkiyeCiz();
-                    break;
+                    Carpisma.dikdortgenCemberCarpismaVarMi(dikdortgen, cember);
+
+                    if (Carpisma.dikdortgenCemberCarpismaVarMi(dikdortgen, cember))
+                    {
+                        carpismaVarBaslik.ForeColor = Color.Black;
+                        carpismaYokBaslik.ForeColor = Color.Gray;
+                    }
+                    else
+                    {
+                        carpismaYokBaslik.ForeColor = Color.Black;
+                        carpismaVarBaslik.ForeColor = Color.Gray;
+                    }
+
+                    break; // dikdörtgen ile cember çizer ve çarpışma denetimi yapar.
 
                 case 4:
+                    Cember cember1 = new Cember(cemberBireCiz().SolUstNokta.X, cemberBireCiz().SolUstNokta.Y, cemberBireCiz().YariCap);
+                    Cember cember2 = new Cember(cemberIkiyeCiz().SolUstNokta.X, cemberIkiyeCiz().SolUstNokta.Y, cemberIkiyeCiz().YariCap);
                     cemberBireCiz();
                     cemberIkiyeCiz();
-                    break;
+
+                    if (Carpisma.cemberCemberCarpismaVarMi(cember1, cember2))
+                    {
+                        carpismaVarBaslik.ForeColor = Color.Black;
+                        carpismaYokBaslik.ForeColor = Color.Gray;
+                    }
+                    else
+                    {
+                        carpismaYokBaslik.ForeColor = Color.Black;
+                        carpismaVarBaslik.ForeColor = Color.Gray;
+                    }
+                    break; // çember ile çember çizer ve çarpışma denetimi yapar.
 
                 case 5:
                     noktaBireCiz();
@@ -542,15 +610,6 @@ namespace ödeviki
                     break;
 
                 case 11:
-                    break;
-
-                case 12:
-                    break;
-
-                case 13:
-                    break;
-
-                case 14:
                     kureBireCiz();
                     dıkdortgenIkideCiz();
                     break;
@@ -560,7 +619,8 @@ namespace ödeviki
         public  class Carpisma
         {
             public static bool noktaDortgenCarpismaVarMi(Nokta nokta, Dortgen dortgen)
-            {   
+            {
+
                 if (nokta != null && dortgen != null)
                 {
                     int dortgenMerkezX = dortgen.SolUstKose.X + dortgen.Genislik  / 2;
@@ -568,15 +628,123 @@ namespace ödeviki
                     
                     if (Math.Abs( dortgenMerkezX - nokta.X) <= dortgen.Genislik /2 && Math.Abs(dortgenMerkezY - nokta.Y) <= dortgen.Yukseklik / 2 )
                     {
-                        Console.WriteLine("Burdayım be burdayım");
+                        return true;
                     }
                     else
                     {
-                        Console.WriteLine("carpışma yok");
+                        return false;
                     }
                 }
 
-                return true;
+                return false;
+            }
+
+            public static bool noktaCemberCarpismaVarMi(Nokta nokta, Cember cember)
+            {
+                if (nokta != null && cember != null)
+                {
+                    int cemberMerkeziX = cember.SolUstNokta.X + cember.YariCap;
+                    int cemberMerkeziY = cember.SolUstNokta.Y + cember.YariCap;
+
+                    if (Math.Abs( cemberMerkeziX - nokta.X) <= cember.YariCap && Math.Abs(cemberMerkeziY - nokta.Y) <= cember.YariCap)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                return false;
+            }
+
+            public static bool dikdortgenDikdortgenCarpismaVarMi(DıkdortgenPrizma dikdortgen1, DıkdortgenPrizma dikdortgen2)
+            {
+                if (dikdortgen1 != null && dikdortgen2 != null)
+                {
+                    int dikdortgenBirMerkezX = dikdortgen1.Taban.SolUstKose.X + dikdortgen1.Taban.Genislik - dikdortgen1.Taban.Genislik / 6;
+                    int dikdortgenBirMerkezY = dikdortgen1.Taban.SolUstKose.Y + dikdortgen1.Taban.SolUstKose.Y / 6;
+
+                    int dikdortgenIkiMerkezX = dikdortgen2.Taban.SolUstKose.X + dikdortgen2.Taban.Genislik - dikdortgen2.Taban.Genislik / 6;
+                    int dikdortgenIkiMerkezY = dikdortgen2.Taban.SolUstKose.Y + dikdortgen2.Taban.SolUstKose.Y / 6;
+
+                    if (
+                        Math.Abs(dikdortgen1.Taban.SolUstKose.X - dikdortgen2.Taban.SolUstKose.X) 
+                        <= 
+                        Math.Abs(dikdortgen1.Taban.Genislik - dikdortgen2.Taban.Genislik)
+                        && 
+                        Math.Abs(dikdortgen1.Taban.SolUstKose.Y - dikdortgen2.Taban.SolUstKose.Y)
+                        <=
+                        Math.Abs(dikdortgen1.Taban.Yukseklik - dikdortgen2.Taban.Yukseklik)
+                       )
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }  
+                }
+
+                return false;
+            }
+
+            public static bool dikdortgenCemberCarpismaVarMi(DıkdortgenPrizma dikdortgen, Cember cember)
+            {
+                int dikdortgenBirMerkezXCase3 = dikdortgen.Taban.SolUstKose.X + dikdortgen.Taban.Genislik - dikdortgen.Taban.Genislik / 6;
+                int dikdortgenBirMerkezYCase3 = dikdortgen.Taban.SolUstKose.Y + dikdortgen.Taban.SolUstKose.Y / 6;
+
+                int cemberMerkeziXCase3 = cember.SolUstNokta.X + cember.YariCap;
+                int cemberMerkeziYCase3 = cember.SolUstNokta.Y + cember.YariCap;
+
+                if (dikdortgen != null && cember != null)
+                {
+                    if (
+                        Math.Abs(dikdortgenBirMerkezXCase3 - cemberMerkeziXCase3)
+                        <=
+                        Math.Abs((dikdortgen.Taban.Genislik - dikdortgen.Taban.Genislik / 6) + cember.YariCap)
+                        &&
+                        Math.Abs(dikdortgenBirMerkezYCase3 - cemberMerkeziYCase3)
+                        <=
+                        Math.Abs(dikdortgen.Taban.Yukseklik - dikdortgen.Taban.Yukseklik / 6) + cember.YariCap
+                        )
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                return false;
+            }
+
+            public static bool cemberCemberCarpismaVarMi(Cember cember1, Cember cember2)
+            {
+                int cember1MerkezX = cember1.SolUstNokta.X + cember1.YariCap;
+                int cember1MerkezY = cember1.SolUstNokta.Y + cember1.YariCap;
+
+                int cember2MerkezX = cember1.SolUstNokta.X + cember1.YariCap;
+                int cember2MerkezY = cember1.SolUstNokta.Y + cember1.YariCap;
+
+                if (cember1 != null && cember2 != null)
+                {
+                    if (
+                        Math.Abs(cember1MerkezX - cember2MerkezX) <= cember1.YariCap + cember2.YariCap 
+                        &&
+                        Math.Abs(cember1MerkezY - cember2MerkezY) <= cember1.YariCap + cember2.YariCap
+                        )
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                return false;
             }
         }
 

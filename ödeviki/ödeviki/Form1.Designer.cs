@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.carpismaYokBaslik = new System.Windows.Forms.Label();
+            this.carpismaVarBaslik = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.derinlikBirBaslik = new System.Windows.Forms.Label();
             this.koordinatlarIkiBaslik = new System.Windows.Forms.Label();
@@ -73,6 +75,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.carpismaYokBaslik);
+            this.groupBox1.Controls.Add(this.carpismaVarBaslik);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.derinlikBirBaslik);
             this.groupBox1.Controls.Add(this.koordinatlarIkiBaslik);
@@ -114,7 +118,28 @@
             this.groupBox1.Size = new System.Drawing.Size(611, 763);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bayrağı bayrak yapan üzerindeki kandır. Toprak, uğrunda ölen varsa vatandır.";
+            // 
+            // carpismaYokBaslik
+            // 
+            this.carpismaYokBaslik.AutoSize = true;
+            this.carpismaYokBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.carpismaYokBaslik.ForeColor = System.Drawing.Color.Gray;
+            this.carpismaYokBaslik.Location = new System.Drawing.Point(21, 683);
+            this.carpismaYokBaslik.Name = "carpismaYokBaslik";
+            this.carpismaYokBaslik.Size = new System.Drawing.Size(231, 37);
+            this.carpismaYokBaslik.TabIndex = 54;
+            this.carpismaYokBaslik.Text = "Çarpışma yok !";
+            // 
+            // carpismaVarBaslik
+            // 
+            this.carpismaVarBaslik.AutoSize = true;
+            this.carpismaVarBaslik.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.carpismaVarBaslik.ForeColor = System.Drawing.Color.Gray;
+            this.carpismaVarBaslik.Location = new System.Drawing.Point(310, 683);
+            this.carpismaVarBaslik.Name = "carpismaVarBaslik";
+            this.carpismaVarBaslik.Size = new System.Drawing.Size(226, 37);
+            this.carpismaVarBaslik.TabIndex = 53;
+            this.carpismaVarBaslik.Text = "Çarpışma var !";
             // 
             // label2
             // 
@@ -451,9 +476,6 @@
             "Silindir ile Silindir Çarpışması Denetimi",
             "Küre ile Küre Çarpışması Denetimi",
             "Küre ile Silindir Çarpışması Denetimi",
-            "Yüzey ile Küre Çarpışması Denetimi",
-            "Yüzey ile Dikdörtgen Prizma Çarpışması Denetimi",
-            "Yüzey ile Silindir Çarpışması Denetimi",
             "Küre ile Dikdörtgen Prizma Çarpışması Denetimi"});
             this.carpDenetCombobox.Location = new System.Drawing.Point(6, 60);
             this.carpDenetCombobox.Name = "carpDenetCombobox";
@@ -530,6 +552,8 @@
         private System.Windows.Forms.Label koordinatlarBirBaslik;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label derinlikBirBaslik;
+        private System.Windows.Forms.Label carpismaVarBaslik;
+        private System.Windows.Forms.Label carpismaYokBaslik;
     }
 }
 
